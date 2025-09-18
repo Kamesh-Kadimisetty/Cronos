@@ -38,11 +38,11 @@ export default function LandingPage() {
       {/* Hero */}
       <section className="relative isolate px-6 py-20 md:py-28">
         {/* Animated background blobs */}
-        <div className="pointer-events-none absolute inset-0 -z-10">
+        {/* <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute -top-24 -left-16 size-[28rem] rounded-full bg-primary/15 blur-3xl animate-blob" />
           <div className="absolute top-20 -right-10 size-[22rem] rounded-full bg-emerald-400/10 blur-3xl animate-blob-fast animation-delay-2000" />
           <div className="absolute -bottom-24 left-1/3 size-[26rem] rounded-full bg-primary/10 blur-3xl animate-blob animation-delay-4000" />
-        </div>
+        </div> */}
         <div className="mx-auto max-w-6xl grid gap-10 md:grid-cols-2 items-center">
           {/* Left: copy */}
           <div className="flex flex-col items-start text-left gap-6">

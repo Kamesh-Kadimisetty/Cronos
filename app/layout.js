@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { cn } from '@/lib/utils'
+import { Outfit, Noto_Sans_Arabic } from 'next/font/google'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,9 +20,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        // className={cn(
+        //   outfit.variable,
+        //   notoSansArabic.variable,
+        //   'font-sans antialiased'
+        // )}
       >
         {children}
       </body>
