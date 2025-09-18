@@ -140,8 +140,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Logos
-      <section className="px-6 pb-16">
+       {/* Logos */}
+      {/* <section className="px-6 pb-16">
         <div className="mx-auto max-w-6xl">
           <div className="text-center text-xs uppercase tracking-wide text-muted-foreground mb-6">
             Trusted by modern operations teams
