@@ -1,6 +1,7 @@
 import "./globals.css";
 import { cn } from '@/lib/utils'
 import { Outfit, Noto_Sans_Arabic } from 'next/font/google'
+import { themeScript } from '@/lib/theme-script'
 
 const outfit = Outfit({
   variable: '--font-outfit',
@@ -14,15 +15,6 @@ const notoSansArabic = Noto_Sans_Arabic({
   display: 'swap',
 })
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 export const metadata = {
   title: 'Cronos - AI Site Intelligence Platform',
@@ -37,11 +29,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
+    <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body
         className={cn(
           outfit.variable,
           notoSansArabic.variable,
-          'font-sans antialiased'
+          'font-sans antialiased app-bg'
         )}
       >
         {children}

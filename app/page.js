@@ -2,7 +2,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-
+import { BentoDemo } from '@/components/BentoDemo'
+import { AnimatedBeamMultipleOutputDemo } from '@/components/AnimatedBeam'
+import { ThemeToggle } from '@/components/ui/theme-toggle'
+import { WordByWordReveal, TextReveal, StaggeredTextReveal, StaggeredItem } from '@/components/ui/text-reveal'
 export default function LandingPage() {
   return (
     <main className="min-h-screen">
@@ -31,41 +34,45 @@ export default function LandingPage() {
             <Button asChild size="sm">
               <Link href="/register">Sign up</Link>
             </Button>
+            <ThemeToggle />
           </nav>
         </div>
       </header>
-
+      
       {/* Hero */}
       <section className="relative isolate px-6 py-20 md:py-28">
         {/* Animated background blobs */}
-        {/* <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute -top-24 -left-16 size-[28rem] rounded-full bg-primary/15 blur-3xl animate-blob" />
           <div className="absolute top-20 -right-10 size-[22rem] rounded-full bg-emerald-400/10 blur-3xl animate-blob-fast animation-delay-2000" />
           <div className="absolute -bottom-24 left-1/3 size-[26rem] rounded-full bg-primary/10 blur-3xl animate-blob animation-delay-4000" />
-        </div> */}
+        </div>
         <div className="mx-auto max-w-6xl grid gap-10 md:grid-cols-2 items-center">
           {/* Left: copy */}
           <div className="flex flex-col items-start text-left gap-6">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-              AI-Powered Progress Intelligence for the Physical World
-            </h1>
-            <p className="max-w-2xl text-lg text-muted-foreground">
+            <WordByWordReveal 
+              text="AI-Powered Progress Intelligence for the Physical World"
+              className="text-4xl md:text-6xl font-bold tracking-tight"
+              delay={0.3}
+              staggerDelay={0.08}
+            />
+            <TextReveal delay={1.2} className="max-w-2xl text-lg text-muted-foreground">
               EonForge CRONOS brings visual cognition, real-world data fusion,
               and intelligent automation to any site, operation, or environment
               where progress must be tracked, validated, and executed.
-            </p>
-            <div className="flex flex-wrap items-center gap-4">
+            </TextReveal>
+            <TextReveal delay={1.6} className="flex flex-wrap items-center gap-4">
               <Button asChild>
                 <Link href="/register">See it in Action</Link>
               </Button>
               <Button asChild variant="secondary">
                 <Link href="#product-intelligence">Request Deployment</Link>
               </Button>
-            </div>
+            </TextReveal>
           </div>
 
           {/* Right: tilted preview panel (Linear-style) */}
-          <div className="relative animate-float">
+          <TextReveal delay={0.6} className="relative animate-float">
             <div className="absolute -inset-6 -z-10 rounded-[28px] bg-gradient-to-br from-primary/20 via-transparent to-transparent blur-2xl" />
             <Card className="relative overflow-hidden rounded-2xl border-0 ring-1 ring-border/40 shadow-2xl bg-card/70 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:-rotate-2">
               {/* Top bar / breadcrumb */}
@@ -136,7 +143,7 @@ export default function LandingPage() {
               {/* subtle shimmer */}
               <div className="pointer-events-none absolute -left-1 top-0 h-full w-1/3 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer" />
             </Card>
-          </div>
+          </TextReveal>
         </div>
       </section>
 
@@ -156,6 +163,7 @@ export default function LandingPage() {
         </div>
       </section> */}
 
+
       {/* Intro: What is CRONOS? */}
       <section className="px-6 pb-16">
         <div className="mx-auto max-w-6xl flex flex-col items-center gap-8">
@@ -173,6 +181,7 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
 
       {/* Features */}
       <section className="px-6 pb-24">
@@ -218,6 +227,32 @@ export default function LandingPage() {
         </div>
       </section>
 
+      <section className="px-6 pb-8">
+        <div className="mx-auto max-w-6xl">
+        <div className="mb-6 text-center">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight">Unified Data → CRONOS Intelligence → Action</h2>
+            <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">
+              CRONOS fuses inputs from photos, documents, sensors, ERP, and voice to generate live site insights and route actions to the right people.
+            </p>
+          </div>
+          <AnimatedBeamMultipleOutputDemo className="mt-2" />
+        </div>
+      </section>
+  
+      <div className="flex flex-col justify-center items-center py-12 px-4 sm:px-6 lg:px-8 rounded-2xl shadow-xl">
+        <div className="mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+            CRONOS in Action
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Experience how CRONOS transforms site operations with real-time intelligence, seamless integrations, and intelligent scheduling.
+          </p>
+        </div>
+        <div className="w-full max-w-5xl">
+          <BentoDemo />
+        </div>
+      </div>
+
       {/* How CRONOS Works */}
       <section className="px-6 pb-12">
         <div className="mx-auto max-w-6xl">
@@ -252,6 +287,7 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
 
       {/* Core Capabilities */}
       <section className="px-6 pb-24">
@@ -438,7 +474,7 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-20 bg-[linear-gradient(to_bottom_right,hsl(var(--muted))/20,transparent)]">
+      <section className="px-6 py-20">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Ready to deploy CRONOS?
@@ -462,7 +498,7 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="px-6 py-16 bg-[linear-gradient(to_bottom_right,hsl(var(--muted))/20,transparent)]">
+      <footer className="px-6 py-16">
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
             {/* Logo */}
