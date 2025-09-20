@@ -169,6 +169,15 @@
   --tracking-wide: calc(var(--tracking-normal) + 0.025em);
   --tracking-wider: calc(var(--tracking-normal) + 0.05em);
   --tracking-widest: calc(var(--tracking-normal) + 0.1em);
+  --animate-ripple: ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite;
+  @keyframes ripple {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    }
+  50% {
+    transform: translate(-50%, -50%) scale(0.9);
+    }
+  }
 }
 
 body {
@@ -238,9 +247,32 @@ html[lang='ar'] body {
   100% { opacity: 0; transform: translateX(130%); }
 }
 
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0;
+  }
+}
+
 .animate-blob { animation: blob 16s ease-in-out infinite; }
 .animate-blob-fast { animation: blob 12s ease-in-out infinite; }
 .animate-float { animation: float 6s ease-in-out infinite; }
+.animate-ripple { animation: ripple 4s ease-out infinite; }
 .animation-delay-2000 { animation-delay: 2s; }
 .animation-delay-4000 { animation-delay: 4s; }
 .animate-shimmer { animation: shimmer 5s linear infinite; }
+
+/* 3D shadow effects */
+.shadow-3xl {
+  box-shadow: 
+    0 35px 60px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}

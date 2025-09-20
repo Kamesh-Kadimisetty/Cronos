@@ -4,7 +4,7 @@ import { BellIcon, Share2Icon } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
-
+import { Notifications } from "@/components/Notifications";
 const Placeholder = ({ className }) => (
   <div className={cn("bg-muted/20 rounded-md", className)} />
 );
@@ -72,7 +72,9 @@ const features = [
     cta: "How it works",
     className: "col-span-3 lg:col-span-2",
     background: (
-      <Placeholder className="absolute right-2 top-4 h-[300px] w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-90" />
+      <div className="absolute right-2 top-4 h-[300px] w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-90">
+        <Notifications />
+      </div>
     ),
   },
   {

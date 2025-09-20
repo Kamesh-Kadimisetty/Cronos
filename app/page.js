@@ -2,11 +2,15 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
+import { Ripple } from '@/components/ui/ripple'
 import { BentoDemo } from '@/components/BentoDemo'
 import { AnimatedBeamMultipleOutputDemo } from '@/components/AnimatedBeam'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
 import { WordByWordReveal, TextReveal, StaggeredTextReveal, StaggeredItem } from '@/components/ui/text-reveal'
+import { ProcessSteps } from '@/components/ui/process-steps'
+import { AnimatedDashboard } from '@/components/ui/animated-dashboard'
 export default function LandingPage() {
+
   return (
     <main className="min-h-screen">
       {/* Header */}
@@ -38,7 +42,6 @@ export default function LandingPage() {
           </nav>
         </div>
       </header>
-      
       {/* Hero */}
       <section className="relative isolate px-6 py-20 md:py-28">
         {/* Animated background blobs */}
@@ -163,7 +166,6 @@ export default function LandingPage() {
         </div>
       </section> */}
 
-
       {/* Intro: What is CRONOS? */}
       <section className="px-6 pb-16">
         <div className="mx-auto max-w-6xl flex flex-col items-center gap-8">
@@ -227,6 +229,22 @@ export default function LandingPage() {
         </div>
       </section>
 
+  
+      {/* CRONOS in Action */}
+      <section className="px-6 pb-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+              CRONOS in Action
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Experience how CRONOS transforms site operations with real-time intelligence, seamless integrations, and intelligent scheduling.
+            </p>
+          </div>
+          <BentoDemo />
+        </div>
+      </section>
+
       <section className="px-6 pb-8">
         <div className="mx-auto max-w-6xl">
         <div className="mb-6 text-center">
@@ -238,198 +256,46 @@ export default function LandingPage() {
           <AnimatedBeamMultipleOutputDemo className="mt-2" />
         </div>
       </section>
-  
-      <div className="flex flex-col justify-center items-center py-12 px-4 sm:px-6 lg:px-8 rounded-2xl shadow-xl">
-        <div className="mb-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            CRONOS in Action
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Experience how CRONOS transforms site operations with real-time intelligence, seamless integrations, and intelligent scheduling.
-          </p>
-        </div>
-        <div className="w-full max-w-5xl">
-          <BentoDemo />
-        </div>
-      </div>
-
-      {/* How CRONOS Works */}
-      <section className="px-6 pb-12">
+      
+      {/* Ripple Section */}
+      {/* <section className="px-6 pb-24">
         <div className="mx-auto max-w-6xl">
-          <div className="mx-auto rounded-2xl bg-gradient-to-br from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 ring-1 ring-border/40 shadow-lg p-6 md:p-8">
-            <h3 className="text-center text-xl md:text-4xl font-semibold mb-6">
-              How CRONOS Works
-            </h3>
-            <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
-              {[
-                { title: 'Visual‑AI Driven Validation' },
-                { title: 'Human + Machine Data Fusion' },
-                { title: 'LLM‑Driven Command Interface' },
-                { title: 'Multimodal Input Stream' },
-                { title: 'Workflow‑Aware Alerts & Forecasts' },
-              ].map((item, i) => (
-                <Card
-                  key={i}
-                  className="group relative overflow-hidden rounded-2xl border-0 ring-1 ring-border/50 bg-gradient-to-br from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 p-4 shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-xl"
-                >
-                  <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-[radial-gradient(1000px_160px_at_0%_0%,hsl(var(--primary)/0.08),transparent)]" />
-                  <div className="relative flex items-center gap-3">
-                    <div className="grid size-7 place-items-center rounded-md bg-primary/10 text-primary ring-1 ring-primary/25 shadow-inner">
-                      ✓
-                    </div>
-                    <div className="text-sm md:text-base font-medium tracking-tight">
-                      {item.title}
-                    </div>
-                  </div>
-                </Card>
-              ))}
+          <div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 ring-1 ring-border/40 shadow-lg">
+            <div className="z-10 text-center space-y-4">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+                Experience CRONOS
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Watch how intelligence ripples through your entire operation
+              </p>
             </div>
+            <Ripple />
           </div>
         </div>
-      </section>
-
-
-      {/* Core Capabilities */}
+      </section> */}
+      
+      {/* How CRONOS Works */}
       <section className="px-6 pb-24">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-3xl md:text-5xl font-bold tracking-tight mb-4">
-            Core Capabilities
-          </h2>
-          <p className="mx-auto max-w-3xl text-center text-muted-foreground mb-10">
-            Purpose‑built features that transform how you track, validate, and
-            execute progress across any physical environment.
-          </p>
-          <div className="grid gap-6 md:grid-cols-2">
-            {[
-              {
-                title: 'Visual Progress Validation',
-                desc: 'AI models evaluate submitted images/videos and match them to expected stages.',
-              },
-              {
-                title: 'Task Matching & Exception Detection',
-                desc: 'Compare real‑world state to planned timelines and highlight mismatches instantly.',
-              },
-              {
-                title: 'Natural Language Task Control',
-                desc: 'Assign and validate tasks using voice or chat commands in the field.',
-              },
-              {
-                title: 'Agent‑Driven Site Summaries',
-                desc: 'Automated daily/weekly reports compiled by CRONOS agents using all inputs.',
-              },
-            ].map((capability) => (
-              <Card
-                key={capability.title}
-                className="group relative overflow-hidden rounded-2xl border-0 ring-1 ring-border/50 bg-gradient-to-br from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 p-5 md:p-6 shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-xl"
-              >
-                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-[radial-gradient(1200px_200px_at_0%_0%,hsl(var(--primary)/0.08),transparent)]" />
-                <div className="relative flex items-center gap-3">
-                  <div className="grid size-9 place-items-center rounded-md bg-primary/10 text-primary ring-1 ring-primary/25 shadow-inner">
-                    ★
-                  </div>
-                  <h3 className="text-base md:text-lg font-semibold tracking-tight">
-                    {capability.title}
-                  </h3>
-                </div>
-                <p className="relative mt-3 text-sm text-muted-foreground leading-relaxed">
-                  {capability.desc}
-                </p>
-              </Card>
-            ))}
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+              How CRONOS Works
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Get your site intelligence up and running in three simple steps
+            </p>
           </div>
+          <ProcessSteps />
         </div>
       </section>
 
-      {/* Universal Applications */}
-      <section className="px-6 pb-20">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-3xl md:text-5xl font-bold tracking-tight mb-2">
-            Universal Applications
-          </h2>
-          <p className="mx-auto max-w-3xl text-center text-muted-foreground mb-10">
-            One system. Any site. Any industry. CRONOS adapts to your
-            environment and workflow needs.
-          </p>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                title: 'Construction Industry',
-                bullets: [
-                  'Progress validation',
-                  'ERP sync',
-                  'Subcontractor clearance',
-                ],
-              },
-              {
-                title: 'Factory Floors',
-                bullets: [
-                  'Assembly tracking',
-                  'Quality detection',
-                  'Machine optimization',
-                ],
-              },
-              {
-                title: 'Agricultural Fields',
-                bullets: [
-                  'Crop monitoring',
-                  'Yield tracking',
-                  'Pest detection',
-                ],
-              },
-              {
-                title: 'Retail Fit‑Out',
-                bullets: [
-                  'Brand compliance',
-                  'Rollout tracking',
-                  'Multi‑site visibility',
-                ],
-              },
-              {
-                title: 'Facility Management',
-                bullets: [
-                  'Task validation',
-                  'Mobile logging',
-                  'Issue escalation',
-                ],
-              },
-              {
-                title: 'Public Works',
-                bullets: [
-                  'Government projects',
-                  'Contractor verification',
-                  'City‑wide monitoring',
-                ],
-              },
-            ].map((card) => (
-              <Card
-                key={card.title}
-                className="group relative overflow-hidden rounded-2xl border-0 ring-1 ring-border/50 bg-gradient-to-br from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 p-5 shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-xl"
-              >
-                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-[radial-gradient(1200px_200px_at_0%_0%,hsl(var(--primary)/0.08),transparent)]" />
-                <div className="relative flex items-center gap-3">
-                  <div className="grid size-8 place-items-center rounded-md bg-primary/10 text-primary ring-1 ring-primary/25 shadow-inner">
-                    ■
-                  </div>
-                  <h3 className="text-base md:text-lg font-semibold tracking-tight">
-                    {card.title}
-                  </h3>
-                </div>
-                <ul className="relative mt-4 space-y-2 text-sm text-muted-foreground">
-                  {card.bullets.map((b) => (
-                    <li key={b} className="flex items-center gap-2">
-                      <span className="grid size-4 place-items-center rounded-full bg-primary/15 text-primary ring-1 ring-primary/30 shadow-sm">
-                        ✓
-                      </span>
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            ))}
-          </div>
+      {/* Animated Dashboard Hero */}
+      <section className="px-6 pb-24">
+        <div className="mx-auto max-w-7xl">
+          <AnimatedDashboard />
         </div>
       </section>
-
+      
       {/* Why CRONOS? */}
       <section className="px-6 pb-24">
         <div className="mx-auto max-w-6xl">
