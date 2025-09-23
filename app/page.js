@@ -165,69 +165,67 @@ export default function LandingPage() {
           </div>
         </div>
       </section> */}
+{/* Intro + Features: What is CRONOS? */}
+<section className="px-6 py-32 md:py-40">
+  <div className="mx-auto max-w-6xl flex flex-col items-center gap-8">
+    {/* Intro */}
+    <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight text-center">
+      What is CRONOS?
+    </h2>
+    <div className="text-base md:text-lg text-muted-foreground space-y-3 max-w-4xl text-center">
+      <p>
+        CRONOS is the universal site intelligence system. Designed to
+        observe and understand progress in any real-world scenario, CRONOS
+        uses AI agents to analyze images, videos, documents, schedules,
+        and human inputs to validate execution, track resource usage, and
+        coordinate action — all in real time.
+      </p>
+    </div>
 
-      {/* Intro: What is CRONOS? */}
-      <section className="px-6 py-32 md:py-40">
-        <div className="mx-auto max-w-6xl flex flex-col items-center gap-8">
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight text-center">
-            What is CRONOS?
-          </h2>
-          <div className="text-base md:text-lg text-muted-foreground space-y-3 max-w-4xl text-center">
-            <p>
-              CRONOS is the universal site intelligence system. Designed to
-              observe and understand progress in any real-world scenario, CRONOS
-              uses AI agents to analyze images, videos, documents, schedules,
-              and human inputs to validate execution, track resource usage, and
-              coordinate action — all in real time.
-            </p>
-          </div>
-        </div>
-      </section>
-
-
-      {/* Features */}
-      <section className="px-6 py-32 md:py-40">
-        <div className="mx-auto max-w-6xl grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            {
-              title: 'Visual-AI Driven',
-              desc: 'AI ingests images, videos, drone feeds to detect progress and flag inconsistencies',
-            },
-            {
-              title: 'Data Fusion',
-              desc: 'Combines site images, voice inputs, sensors, forms, and ERP data',
-            },
-            {
-              title: 'LLM Command Interface',
-              desc: 'Natural language commands drive actions and provide context-aware insights',
-            },
-          ].map((card) => (
-            <Card
-              key={card.title}
-              className="group relative overflow-hidden rounded-2xl border-0 ring-1 ring-border/50 bg-gradient-to-br from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 p-0 shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-xl"
+    {/* Features */}
+    <div className="mt-16 w-full grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {[
+        {
+          title: 'Visual-AI Driven',
+          desc: 'AI ingests images, videos, drone feeds to detect progress and flag inconsistencies',
+        },
+        {
+          title: 'Data Fusion',
+          desc: 'Combines site images, voice inputs, sensors, forms, and ERP data',
+        },
+        {
+          title: 'LLM Command Interface',
+          desc: 'Natural language commands drive actions and provide context-aware insights',
+        },
+      ].map((card) => (
+        <Card
+          key={card.title}
+          className="group relative overflow-hidden rounded-2xl border-0 ring-1 ring-border/50 bg-gradient-to-br from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 p-0 shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-xl"
+        >
+          <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-[radial-gradient(1200px_200px_at_0%_0%,hsl(var(--primary)/0.08),transparent)]" />
+          <div className="aspect-[4/3] w-full bg-muted/30" />
+          <div className="relative flex items-end justify-between gap-4 p-6">
+            <div>
+              <h3 className="text-xl font-semibold tracking-tight">
+                {card.title}
+              </h3>
+              <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
+                {card.desc}
+              </p>
+            </div>
+            <button
+              aria-label="Learn more"
+              className="grid place-items-center size-9 rounded-full border bg-background/70 shadow-sm backdrop-blur transition-all hover:bg-background hover:shadow-md"
             >
-              <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-[radial-gradient(1200px_200px_at_0%_0%,hsl(var(--primary)/0.08),transparent)]" />
-              <div className="aspect-[4/3] w-full bg-muted/30" />
-              <div className="relative flex items-end justify-between gap-4 p-6">
-                <div>
-                  <h3 className="text-xl font-semibold tracking-tight">
-                    {card.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
-                    {card.desc}
-                  </p>
-                </div>
-                <button
-                  aria-label="Learn more"
-                  className="grid place-items-center size-9 rounded-full border bg-background/70 shadow-sm backdrop-blur transition-all hover:bg-background hover:shadow-md"
-                >
-                  <span className="text-xl leading-none">+</span>
-                </button>
-              </div>
-            </Card>
-          ))}
-        </div>
-      </section>
+              <span className="text-xl leading-none">+</span>
+            </button>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
 
   
       {/* CRONOS in Action */}

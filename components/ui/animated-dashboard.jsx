@@ -74,35 +74,6 @@ export function AnimatedDashboard() {
           <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.2" />
         </linearGradient>
       </defs>
-      
-      {/* Animated connection lines connecting the cards */}
-      <motion.path
-        d="M 300 200 Q 500 150 700 250"
-        stroke="url(#connectionGradient)"
-        strokeWidth="1.5"
-        fill="none"
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 0.5 }}
-        transition={{ duration: 2, delay: 1 }}
-      />
-      <motion.path
-        d="M 200 350 Q 400 300 600 400"
-        stroke="url(#connectionGradient)"
-        strokeWidth="1.5"
-        fill="none"
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 0.5 }}
-        transition={{ duration: 2, delay: 1.5 }}
-      />
-      <motion.path
-        d="M 400 180 Q 450 300 500 420"
-        stroke="url(#connectionGradient)"
-        strokeWidth="1.5"
-        fill="none"
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 0.5 }}
-        transition={{ duration: 2, delay: 2 }}
-      />
     </svg>
   );
 
