@@ -1,20 +1,37 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { Ripple } from '@/components/ui/ripple'
 import { BentoDemo } from '@/components/BentoDemo'
 import { AnimatedBeamMultipleOutputDemo } from '@/components/AnimatedBeam'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
 import { WordByWordReveal, TextReveal, StaggeredTextReveal, StaggeredItem } from '@/components/ui/text-reveal'
 import { ProcessSteps } from '@/components/ui/process-steps'
 import { AnimatedDashboard } from '@/components/ui/animated-dashboard'
+import { useState } from 'react'
 export default function LandingPage() {
+  const [activeDropdown, setActiveDropdown] = useState(null)
+
+  const productItems = [
+    { title: 'Plan', description: 'Set the product direction with projects and initiatives' },
+    { title: 'Build', description: 'Make progress with issue tracking and cycle planning' },
+    { title: 'New: Product Intelligence', description: 'Auto-apply triage suggestions', badge: 'New' }
+  ]
+
+  const resourcesItems = [
+    { title: 'Customer requests', description: 'Manage user feedback' },
+    { title: 'Insights', description: 'Realtime analytics' },
+    { title: 'Linear Asks', description: 'Workplace requests' },
+    { title: 'Integrations', description: 'Collaborate across tools' },
+    { title: 'Artificial intelligence', description: 'AI-powered workflows' }
+  ]
 
   return (
     <main className="min-h-screen w-full">
       {/* Header */}
-      <header className="sticky top-0 z-50 px-6 py-5 bg-background">
+      <header className="sticky top-0 z-50 px-6 py-5 bg-transparent backdrop-blur-md border-b border-border/40">
         <div className="mx-auto max-w-6xl flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Image
@@ -27,11 +44,94 @@ export default function LandingPage() {
             <span className="font-semibold">CRONOS</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
-            <Link href="#product">Product</Link>
-            <Link href="#resources">Resources</Link>
-            <Link href="#pricing">Pricing</Link>
-            <Link href="#customers">Customers</Link>
-            <Link href="#contact">Contact</Link>
+            {/* Product Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setActiveDropdown('product')}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <Link href="#product" className="hover:text-foreground flex items-center gap-1">
+                Product
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </Link>
+              
+              {activeDropdown === 'product' && (
+                <div className="absolute top-full left-0 mt-2 w-80 bg-background/95 backdrop-blur-md border border-border/50 rounded-lg shadow-xl p-4">
+                  <div className="space-y-1">
+                    <div className="text-xs font-medium text-muted-foreground mb-3">Core Features</div>
+                    {productItems.map((item, index) => (
+                      <Link
+                        key={index}
+                        href={`#${item.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
+                        className="block p-3 rounded-md hover:bg-muted/50 transition-colors group"
+                      >
+                        <div className="flex items-start justify-between">
+                          <div>
+                            <div className="font-medium text-foreground group-hover:text-primary flex items-center gap-2">
+                              {item.title}
+                              {item.badge && (
+                                <span className="text-xs bg-primary/20 text-primary px-1.5 py-0.5 rounded">
+                                  {item.badge}
+                                </span>
+                              )}
+                            </div>
+                            <div className="text-xs text-muted-foreground mt-1">
+                              {item.description}
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Resources Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setActiveDropdown('resources')}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <Link href="#resources" className="hover:text-foreground flex items-center gap-1">
+                Resources
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </Link>
+              
+              {activeDropdown === 'resources' && (
+                <div className="absolute top-full left-0 mt-2 w-80 bg-background/95 backdrop-blur-md border border-border/50 rounded-lg shadow-xl p-4">
+                  <div className="space-y-1">
+                    <div className="text-xs font-medium text-muted-foreground mb-3">More</div>
+                    {resourcesItems.map((item, index) => (
+                      <Link
+                        key={index}
+                        href={`#${item.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
+                        className="block p-3 rounded-md hover:bg-muted/50 transition-colors group"
+                      >
+                        <div className="flex items-start justify-between">
+                          <div>
+                            <div className="font-medium text-foreground group-hover:text-primary">
+                              {item.title}
+                            </div>
+                            <div className="text-xs text-muted-foreground mt-1">
+                              {item.description}
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <Link href="#pricing" className="hover:text-foreground">Pricing</Link>
+            <Link href="#customers" className="hover:text-foreground">Customers</Link>
+            <Link href="#contact" className="hover:text-foreground">Contact</Link>
             <Link href="/login" className="hover:text-foreground">
               Log in
             </Link>
@@ -226,8 +326,6 @@ export default function LandingPage() {
   </div>
 </section>
 
-
-  
       {/* CRONOS in Action */}
       <section className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-6xl">
