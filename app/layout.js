@@ -28,7 +28,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="light" suppressHydrationWarning>
+    <html lang="en" className="light h-full" suppressHydrationWarning>
     <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
         className={cn(
           outfit.variable,
           notoSansArabic.variable,
-          'font-sans antialiased app-bg'
+          'font-sans antialiased app-bg h-full'
         )}
       >
         {children}

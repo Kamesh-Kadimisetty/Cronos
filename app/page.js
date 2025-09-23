@@ -12,9 +12,9 @@ import { AnimatedDashboard } from '@/components/ui/animated-dashboard'
 export default function LandingPage() {
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen w-full">
       {/* Header */}
-      <header className="sticky top-0 z-50 px-6 py-5 bg-background  shadow-sm">
+      <header className="sticky top-0 z-50 px-6 py-5 bg-background">
         <div className="mx-auto max-w-6xl flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Image
@@ -43,7 +43,7 @@ export default function LandingPage() {
         </div>
       </header>
       {/* Hero */}
-      <section className="relative isolate px-6 py-20 md:py-28">
+      <section className="relative isolate px-6 py-32 md:py-40 lg:py-48">
         {/* Animated background blobs */}
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute -top-24 -left-16 size-[28rem] rounded-full bg-primary/15 blur-3xl animate-blob" />
@@ -167,7 +167,7 @@ export default function LandingPage() {
       </section> */}
 
       {/* Intro: What is CRONOS? */}
-      <section className="px-6 pb-16">
+      <section className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-6xl flex flex-col items-center gap-8">
           <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight text-center">
             What is CRONOS?
@@ -186,7 +186,7 @@ export default function LandingPage() {
 
 
       {/* Features */}
-      <section className="px-6 pb-24">
+      <section className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-6xl grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
@@ -231,7 +231,7 @@ export default function LandingPage() {
 
   
       {/* CRONOS in Action */}
-      <section className="px-6 pb-24">
+      <section className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-6xl">
           <div className="mb-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
@@ -245,7 +245,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="px-6 pb-8">
+      <section className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-6xl">
         <div className="mb-6 text-center">
             <h2 className="text-2xl md:text-4xl font-bold tracking-tight">Unified Data → CRONOS Intelligence → Action</h2>
@@ -275,7 +275,7 @@ export default function LandingPage() {
       </section> */}
       
       {/* How CRONOS Works */}
-      <section className="px-6 pb-24">
+      <section className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 text-center">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
@@ -290,14 +290,14 @@ export default function LandingPage() {
       </section>
 
       {/* Animated Dashboard Hero */}
-      <section className="px-6 pb-24">
+      <section className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-7xl">
           <AnimatedDashboard />
         </div>
       </section>
       
       {/* Why CRONOS? */}
-      <section className="px-6 pb-24">
+      <section className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-center text-3xl md:text-5xl font-bold tracking-tight mb-10">
             Why CRONOS?
@@ -340,7 +340,7 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-20">
+      <section className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Ready to deploy CRONOS?
@@ -364,7 +364,7 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="px-6 py-16">
+      <footer className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
             {/* Logo */}
