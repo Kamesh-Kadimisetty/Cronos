@@ -1,5 +1,4 @@
 'use client'
-
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
@@ -268,7 +267,6 @@ export default function LandingPage() {
 {/* Intro + Features: What is CRONOS? */}
 <section className="px-6 py-32 md:py-40">
   <div className="mx-auto max-w-6xl flex flex-col items-center gap-8">
-    {/* Intro */}
     <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight text-center">
       What is CRONOS?
     </h2>
@@ -282,7 +280,6 @@ export default function LandingPage() {
       </p>
     </div>
 
-    {/* Features */}
     <div className="mt-16 w-full grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {[
         {
