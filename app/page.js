@@ -9,7 +9,10 @@ import { WordByWordReveal, TextReveal, StaggeredTextReveal, StaggeredItem } from
 import { ProcessSteps } from '@/components/ui/process-steps'
 import { AnimatedDashboard } from '@/components/ui/animated-dashboard'
 import { Globe } from '@/components/ui/globe'
+import { InteractiveGridPattern } from '@/components/ui/interactive-grid-pattern'
+import { FeaturesShowcase } from '@/components/FeatuesShowcase'
 import { useState } from 'react'
+
 export default function LandingPage() {
   const [activeDropdown, setActiveDropdown] = useState(null)
 
@@ -49,7 +52,7 @@ export default function LandingPage() {
               onMouseEnter={() => setActiveDropdown('product')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <Link href="#features" className="hover:text-foreground flex items-center gap-1">
+              <Link href="/features" className="hover:text-foreground flex items-center gap-1">
                 Features
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -88,9 +91,9 @@ export default function LandingPage() {
               )}
             </div>
 
-            <Link href="#resources" className="hover:text-foreground">Resources</Link>              
-            <Link href="#pricing" className="hover:text-foreground">Pricing</Link>
-            <Link href="#contact" className="hover:text-foreground">Contact</Link>
+            <Link href="/resources" className="hover:text-foreground">Resources</Link>              
+            <Link href="/pricing" className="hover:text-foreground">Pricing</Link>
+            <Link href="/contact" className="hover:text-foreground">Contact</Link>
             <Link href="/login" className="hover:text-foreground">
               Log in
             </Link>
@@ -101,7 +104,7 @@ export default function LandingPage() {
         </div>
       </header>
       {/* Hero */}
-      <section className="relative isolate px-6 py-32 md:py-40 lg:py-24">
+      <section className="relative isolate px-6 py-32 md:py-40 lg:py-28">
         {/* Animated background blobs */}
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute -top-24 -left-16 size-[28rem] rounded-full bg-primary/15 blur-3xl animate-blob" />
@@ -302,65 +305,20 @@ export default function LandingPage() {
         </div>
       </section> */}
 
-{/* Intro + Features: What is CRONOS? */}
-{/* <section className="px-6 py-32 md:py-40">
-  <div className="mx-auto max-w-6xl flex flex-col items-center gap-8">
-    <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight text-center">
-      What is CRONOS?
-    </h2>
-    <div className="text-base md:text-lg text-muted-foreground space-y-3 max-w-4xl text-center">
-      <p>
-        CRONOS is the universal site intelligence system. Designed to
-        observe and understand progress in any real-world scenario, CRONOS
-        uses AI agents to analyze images, videos, documents, schedules,
-        and human inputs to validate execution, track resource usage, and
-        coordinate action — all in real time.
-      </p>
-    </div>
-
-    <div className="mt-16 w-full grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {[
-        {
-          title: 'Visual-AI Driven',
-          desc: 'AI ingests images, videos, drone feeds to detect progress and flag inconsistencies',
-        },
-        {
-          title: 'Data Fusion',
-          desc: 'Combines site images, voice inputs, sensors, forms, and ERP data',
-        },
-        {
-          title: 'LLM Command Interface',
-          desc: 'Natural language commands drive actions and provide context-aware insights',
-        },
-      ].map((card) => (
-        <Card
-          key={card.title}
-          className="group relative overflow-hidden rounded-2xl border-0 ring-1 ring-border/50 bg-gradient-to-br from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 p-0 shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-xl"
-        >
-          <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-[radial-gradient(1200px_200px_at_0%_0%,hsl(var(--primary)/0.08),transparent)]" />
-          <div className="aspect-[4/3] w-full bg-muted/30" />
-          <div className="relative flex items-end justify-between gap-4 p-6">
-            <div>
-              <h3 className="text-xl font-semibold tracking-tight">
-                {card.title}
-              </h3>
-              <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
-                {card.desc}
-              </p>
-            </div>
-            <button
-              aria-label="Learn more"
-              className="grid place-items-center size-9 rounded-full border bg-background/70 shadow-sm backdrop-blur transition-all hover:bg-background hover:shadow-md"
-            >
-              <span className="text-xl leading-none">+</span>
-            </button>
+      {/* Features Section */}
+      <section className="px-6 py-32 md:py-40">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+              Core Features
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Discover the powerful capabilities that make CRONOS the ultimate site intelligence platform
+            </p>
           </div>
-        </Card>
-      ))}
-    </div>
-  </div>
-</section> */}
-
+          <FeaturesShowcase/>
+        </div>
+      </section>
 
       {/* CRONOS in Action */}
       <section className="px-6 py-32 md:py-40">
@@ -471,9 +429,40 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="px-6 py-32 md:py-40">
+      {/* <section className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-4xl text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">
+            Ready to deploy CRONOS?
+          </h2>
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
+            Request a personalized{' '}
+            <span className="font-semibold text-foreground">live demo</span> of
+            how <span className="font-semibold text-foreground">CRONOS</span>{' '}
+            can transform your project, site, or operation — regardless of
+            industry or size.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Button asChild variant="outline" size="lg">
+              <Link href="/contact">Contact sales</Link>
+            </Button>
+            <Button asChild size="lg">
+              <Link href="/register">Get started</Link>
+            </Button>
+          </div>
+        </div>
+      </section> */}
+
+      {/* CTA Section */}
+      <section className="relative px-6 py-32 md:py-40 overflow-hidden">
+        {/* Interactive Grid Background */}
+        <InteractiveGridPattern 
+          className="absolute inset-0 h-full w-full opacity-30"
+          width={60}
+          height={60}
+          squares={[20, 15]}
+          squaresClassName="fill-primary/10 stroke-primary/20 hover:fill-primary/20"
+        />
+        <div className="relative mx-auto max-w-4xl text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Ready to deploy CRONOS?
           </h2>
