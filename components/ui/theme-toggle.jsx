@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 export function ThemeToggle({ className }) {
-  const [theme, setTheme] = React.useState("dark")
+  const [theme, setTheme] = React.useState("light")
 
   React.useEffect(() => {
     // Get initial theme from document

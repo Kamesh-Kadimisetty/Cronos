@@ -5,10 +5,10 @@ import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { BentoDemo } from '@/components/BentoDemo'
 import { AnimatedBeamMultipleOutputDemo } from '@/components/AnimatedBeam'
-import { ThemeToggle } from '@/components/ui/theme-toggle'
 import { WordByWordReveal, TextReveal, StaggeredTextReveal, StaggeredItem } from '@/components/ui/text-reveal'
 import { ProcessSteps } from '@/components/ui/process-steps'
 import { AnimatedDashboard } from '@/components/ui/animated-dashboard'
+import { Globe } from '@/components/ui/globe'
 import { useState } from 'react'
 export default function LandingPage() {
   const [activeDropdown, setActiveDropdown] = useState(null)
@@ -30,7 +30,7 @@ export default function LandingPage() {
   return (
     <main className="min-h-screen w-full">
       {/* Header */}
-      <header className="sticky top-0 z-50 px-6 py-5 bg-transparent backdrop-blur-md border-b border-border/40">
+      <header className="sticky top-0 z-50 px-4 py-4 bg-transparent backdrop-blur-md border-b border-border/40">
         <div className="mx-auto max-w-6xl flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Image
@@ -49,8 +49,8 @@ export default function LandingPage() {
               onMouseEnter={() => setActiveDropdown('product')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <Link href="#product" className="hover:text-foreground flex items-center gap-1">
-                Product
+              <Link href="#features" className="hover:text-foreground flex items-center gap-1">
+                Features
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -88,48 +88,8 @@ export default function LandingPage() {
               )}
             </div>
 
-            {/* Resources Dropdown */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setActiveDropdown('resources')}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <Link href="#resources" className="hover:text-foreground flex items-center gap-1">
-                Resources
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </Link>
-              
-              {activeDropdown === 'resources' && (
-                <div className="absolute top-full left-0 mt-2 w-80 bg-background/95 backdrop-blur-md border border-border/50 rounded-lg shadow-xl p-4">
-                  <div className="space-y-1">
-                    <div className="text-xs font-medium text-muted-foreground mb-3">More</div>
-                    {resourcesItems.map((item, index) => (
-                      <Link
-                        key={index}
-                        href={`#${item.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
-                        className="block p-3 rounded-md hover:bg-muted/50 transition-colors group"
-                      >
-                        <div className="flex items-start justify-between">
-                          <div>
-                            <div className="font-medium text-foreground group-hover:text-primary">
-                              {item.title}
-                            </div>
-                            <div className="text-xs text-muted-foreground mt-1">
-                              {item.description}
-                            </div>
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
+            <Link href="#resources" className="hover:text-foreground">Resources</Link>              
             <Link href="#pricing" className="hover:text-foreground">Pricing</Link>
-            <Link href="#customers" className="hover:text-foreground">Customers</Link>
             <Link href="#contact" className="hover:text-foreground">Contact</Link>
             <Link href="/login" className="hover:text-foreground">
               Log in
@@ -137,12 +97,11 @@ export default function LandingPage() {
             <Button asChild size="sm">
               <Link href="/register">Sign up</Link>
             </Button>
-            <ThemeToggle />
           </nav>
         </div>
       </header>
       {/* Hero */}
-      <section className="relative isolate px-6 py-32 md:py-40 lg:py-48">
+      <section className="relative isolate px-6 py-32 md:py-40 lg:py-24">
         {/* Animated background blobs */}
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute -top-24 -left-16 size-[28rem] rounded-full bg-primary/15 blur-3xl animate-blob" />
@@ -249,6 +208,84 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Global Monitoring Section */}
+      <section className="px-6 py-32 md:py-40">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-16 lg:grid-cols-2 items-center">
+            {/* Left: Content */}
+            <div className="flex flex-col gap-8">
+              <div>
+                <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
+                  Monitor Sites Across the Globe
+                </h2>
+                <p className="text-lg text-muted-foreground mb-8">
+                  CRONOS provides comprehensive site monitoring capabilities across multiple geographic zones. 
+                  Whether your operations span continents or focus on specific regions, our platform ensures 
+                  consistent oversight and intelligent analysis wherever your sites are located.
+                </p>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-primary font-semibold">🌍</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Multi-Zone Coverage</h3>
+                    <p className="text-muted-foreground">
+                      Deploy monitoring across North America, Europe, Asia-Pacific, and other key regions 
+                      to ensure optimal performance and compliance with local regulations.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-primary font-semibold">⚡</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Real-Time Intelligence</h3>
+                    <p className="text-muted-foreground">
+                      Get instant insights from your global operations with AI-powered analysis 
+                      that adapts to local conditions and requirements.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-primary font-semibold">🎯</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-2">Zone-Specific Monitoring</h3>
+                    <p className="text-muted-foreground">
+                      Configure monitoring parameters specific to each geographic zone, 
+                      accounting for local infrastructure, regulations, and operational needs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap items-center gap-4">
+                <Button asChild>
+                  <Link href="/register">Start Global Monitoring</Link>
+                </Button>
+                <Button asChild variant="outline">
+                  <Link href="#contact">View Coverage Map</Link>
+                </Button>
+              </div>
+            </div>
+            
+            {/* Right: Globe */}
+            <div className="relative">
+              <div className="relative h-[500px] w-full">
+                <Globe className="w-full h-full" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
        {/* Logos */}
       {/* <section className="px-6 pb-16">
         <div className="mx-auto max-w-6xl">
@@ -264,8 +301,9 @@ export default function LandingPage() {
           </div>
         </div>
       </section> */}
+
 {/* Intro + Features: What is CRONOS? */}
-<section className="px-6 py-32 md:py-40">
+{/* <section className="px-6 py-32 md:py-40">
   <div className="mx-auto max-w-6xl flex flex-col items-center gap-8">
     <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight text-center">
       What is CRONOS?
@@ -321,7 +359,8 @@ export default function LandingPage() {
       ))}
     </div>
   </div>
-</section>
+</section> */}
+
 
       {/* CRONOS in Action */}
       <section className="px-6 py-32 md:py-40">
