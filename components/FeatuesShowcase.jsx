@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { AnimatedSection, StaggeredContainer, StaggeredItem, AnimatedCard } from '@/components/ui/scroll-animation'
 
 // Features Showcase Component
 export function FeaturesShowcase() {
@@ -84,17 +85,17 @@ export function FeaturesShowcase() {
     return (
       <div className="w-full">
         {/* Feature Tabs */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <StaggeredContainer className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {features.map((feature, index) => (
-            <button
-              key={feature.id}
-              onClick={() => setActiveFeature(index)}
-              className={`relative p-4 rounded-xl border transition-all duration-300 text-left ${
-                activeFeature === index
-                  ? 'bg-primary/10 border-primary/30 shadow-lg scale-105'
-                  : 'bg-card/50 border-border/50 hover:bg-card/80 hover:border-border/80'
-              }`}
-            >
+            <StaggeredItem key={feature.id}>
+              <button
+                onClick={() => setActiveFeature(index)}
+                className={`relative p-4 rounded-xl border transition-all duration-300 text-left w-full ${
+                  activeFeature === index
+                    ? 'bg-primary/10 border-primary/30 shadow-lg scale-105'
+                    : 'bg-card/50 border-border/50 hover:bg-card/80 hover:border-border/80'
+                }`}
+              >
               <div className="flex flex-col items-center text-center gap-2">
                 <div>
                   <h2 className={`font-semibold text-2xl md:text-sm ${
@@ -104,16 +105,17 @@ export function FeaturesShowcase() {
                   </h2>
                 </div>
               </div>
-              {activeFeature === index && (
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
-              )}
-            </button>
+                {activeFeature === index && (
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
+                )}
+              </button>
+            </StaggeredItem>
           ))}
-        </div>
+        </StaggeredContainer>
   
         {/* Feature Content */}
-        <div className="relative">
-          <Card className="p-8 md:p-12 bg-gradient-to-br from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-0 ring-1 ring-border/50 shadow-xl">
+        <AnimatedSection variant="fadeInUp" delay={300} className="relative">
+          <AnimatedCard className="p-8 md:p-12 bg-gradient-to-br from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-0 ring-1 ring-border/50 shadow-xl" hoverScale={1.01}>
             <div className="grid gap-8 lg:grid-cols-2 items-start">
               {/* Left: Content */}
               <div className="space-y-6">
@@ -188,8 +190,8 @@ export function FeaturesShowcase() {
                 </div>
               </div>
             </div>
-          </Card>
-        </div>
+          </AnimatedCard>
+        </AnimatedSection>
       </div>
     )
   }

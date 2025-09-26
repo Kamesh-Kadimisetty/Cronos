@@ -12,6 +12,7 @@ import { Globe } from '@/components/ui/globe'
 import { InteractiveGridPattern } from '@/components/ui/interactive-grid-pattern'
 import { FeaturesShowcase } from '@/components/FeatuesShowcase'
 import { Navbar } from '@/components/Navbar'
+import { AnimatedSection, StaggeredContainer, StaggeredItem as AnimatedStaggeredItem, RevealText, AnimatedCard, FloatingElement } from '@/components/ui/scroll-animation'
 
 export default function LandingPage() {
 
@@ -128,14 +129,14 @@ export default function LandingPage() {
       </section>
 
       {/* Global Monitoring Section */}
-      <section className="px-6 py-32 md:py-40">
+      <AnimatedSection variant="fadeInUp" className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-16 lg:grid-cols-2 items-center">
             {/* Left: Content */}
-            <div className="flex flex-col gap-8">
+            <AnimatedSection variant="fadeInLeft" delay={200} className="flex flex-col gap-8">
               <div>
                 <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
-                  Monitor Sites Across the Globe
+                  Monitor Sites Across the World
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8">
                   CRONOS provides comprehensive site monitoring capabilities across multiple geographic zones. 
@@ -144,8 +145,8 @@ export default function LandingPage() {
                 </p>
               </div>
               
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
+              <StaggeredContainer className="space-y-6">
+                <AnimatedStaggeredItem className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                     <span className="text-primary font-semibold">🌍</span>
                   </div>
@@ -156,9 +157,9 @@ export default function LandingPage() {
                       to ensure optimal performance and compliance with local regulations.
                     </p>
                   </div>
-                </div>
+                </AnimatedStaggeredItem>
                 
-                <div className="flex items-start gap-4">
+                <AnimatedStaggeredItem className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                     <span className="text-primary font-semibold">⚡</span>
                   </div>
@@ -169,9 +170,9 @@ export default function LandingPage() {
                       that adapts to local conditions and requirements.
                     </p>
                   </div>
-                </div>
+                </AnimatedStaggeredItem>
                 
-                <div className="flex items-start gap-4">
+                <AnimatedStaggeredItem className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                     <span className="text-primary font-semibold">🎯</span>
                   </div>
@@ -182,8 +183,8 @@ export default function LandingPage() {
                       accounting for local infrastructure, regulations, and operational needs.
                     </p>
                   </div>
-                </div>
-              </div>
+                </AnimatedStaggeredItem>
+              </StaggeredContainer>
               
               <div className="flex flex-wrap items-center gap-4">
                 <Button asChild>
@@ -193,17 +194,17 @@ export default function LandingPage() {
                   <Link href="#contact">View Coverage Map</Link>
                 </Button>
               </div>
-            </div>
+            </AnimatedSection>
             
             {/* Right: Globe */}
-            <div className="relative">
+            <AnimatedSection variant="scaleIn" delay={400} className="relative">
               <div className="relative h-[500px] w-full">
                 <Globe className="w-full h-full" />
               </div>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
        {/* Logos */}
       {/* <section className="px-6 pb-16">
@@ -222,93 +223,87 @@ export default function LandingPage() {
       </section> */}
 
       {/* Features Section */}
-      <section className="px-6 py-32 md:py-40">
+      <AnimatedSection variant="fadeInUp" className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-6xl">
-          <div className="mb-12 text-center">
+          <RevealText className="mb-12 text-center">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
               Core Features
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-3xl mx-auto">
               Discover the powerful capabilities that make CRONOS the ultimate site intelligence platform
             </p>
-          </div>
-          <FeaturesShowcase/>
+          </RevealText>
+          <AnimatedSection variant="scaleIn" delay={300}>
+            <FeaturesShowcase/>
+          </AnimatedSection>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* CRONOS in Action */}
-      <section className="px-6 py-32 md:py-40">
+      <AnimatedSection variant="fadeInUp" className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-6xl">
-          <div className="mb-8 text-center">
+          <RevealText className="mb-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
               CRONOS in Action
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Experience how CRONOS transforms site operations with real-time intelligence, seamless integrations, and intelligent scheduling.
             </p>
-          </div>
-          <BentoDemo />
+          </RevealText>
+          <AnimatedSection variant="slideInUp" delay={300}>
+            <BentoDemo />
+          </AnimatedSection>
         </div>
-      </section>
+      </AnimatedSection>
 
-      <section className="px-6 py-32 md:py-40">
+      <AnimatedSection variant="fadeInUp" className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-6xl">
-        <div className="mb-6 text-center">
+        <RevealText className="mb-6 text-center">
             <h2 className="text-2xl md:text-4xl font-bold tracking-tight">Unified Data → CRONOS Intelligence → Action</h2>
             <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">
               CRONOS fuses inputs from photos, documents, sensors, ERP, and voice to generate live site insights and route actions to the right people.
             </p>
-          </div>
+          </RevealText>
           <AnimatedBeamMultipleOutputDemo className="mt-2" />
         </div>
-      </section>
-      
-      {/* Ripple Section */}
-      {/* <section className="px-6 pb-24">
-        <div className="mx-auto max-w-6xl">
-          <div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 ring-1 ring-border/40 shadow-lg">
-            <div className="z-10 text-center space-y-4">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-                Experience CRONOS
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Watch how intelligence ripples through your entire operation
-              </p>
-            </div>
-            <Ripple />
-          </div>
-        </div>
-      </section> */}
+      </AnimatedSection>
+
       
       {/* How CRONOS Works */}
-      <section className="px-6 py-32 md:py-40">
+      <AnimatedSection variant="fadeInUp" className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-6xl">
-          <div className="mb-12 text-center">
+          <RevealText className="mb-12 text-center">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
               How CRONOS Works
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Get your site intelligence up and running in three simple steps
             </p>
-          </div>
-          <ProcessSteps />
+          </RevealText>
+          <AnimatedSection variant="slideInUp" delay={300}>
+            <ProcessSteps />
+          </AnimatedSection>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Animated Dashboard Hero */}
-      <section className="px-6 py-32 md:py-40">
+      <AnimatedSection variant="fadeInUp" className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-7xl">
-          <AnimatedDashboard />
+          <AnimatedSection variant="scaleIn" delay={200}>
+            <AnimatedDashboard />
+          </AnimatedSection>
         </div>
-      </section>
+      </AnimatedSection>
       
       {/* Why CRONOS? */}
-      <section className="px-6 py-32 md:py-40">
+      <AnimatedSection variant="fadeInUp" className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-3xl md:text-5xl font-bold tracking-tight mb-10">
-            Why CRONOS?
-          </h2>
-          <div className="grid gap-6 md:grid-cols-3">
+          <RevealText className="text-center mb-10">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+              Why CRONOS?
+            </h2>
+          </RevealText>
+          <StaggeredContainer className="grid gap-6 md:grid-cols-3">
             {[
               {
                 title: 'Universal Intelligence',
@@ -323,10 +318,11 @@ export default function LandingPage() {
                 desc: 'Mobile‑first, offline‑friendly. Full control, encryption, and modular deployment.',
               },
             ].map((item) => (
-              <Card
-                key={item.title}
-                className="group relative overflow-hidden rounded-2xl border-0 ring-1 ring-border/50 bg-gradient-to-br from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 p-6 shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-xl"
-              >
+              <AnimatedStaggeredItem key={item.title}>
+                <AnimatedCard
+                  className="group relative overflow-hidden rounded-2xl border-0 ring-1 ring-border/50 bg-gradient-to-br from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 p-6 shadow-lg"
+                  hoverScale={1.03}
+                >
                 <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-[radial-gradient(1200px_200px_at_0%_0%,hsl(var(--primary)/0.08),transparent)]" />
                 <div className="relative flex items-center gap-3">
                   <div className="grid size-9 place-items-center rounded-md bg-primary/10 text-primary ring-1 ring-primary/25 shadow-inner">
@@ -339,66 +335,47 @@ export default function LandingPage() {
                 <p className="relative mt-3 text-sm text-muted-foreground leading-relaxed">
                   {item.desc}
                 </p>
-              </Card>
+                </AnimatedCard>
+              </AnimatedStaggeredItem>
             ))}
-          </div>
+          </StaggeredContainer>
         </div>
-      </section>
-
-      {/* <section className="px-6 py-32 md:py-40">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            Ready to deploy CRONOS?
-          </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
-            Request a personalized{' '}
-            <span className="font-semibold text-foreground">live demo</span> of
-            how <span className="font-semibold text-foreground">CRONOS</span>{' '}
-            can transform your project, site, or operation — regardless of
-            industry or size.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Button asChild variant="outline" size="lg">
-              <Link href="/contact">Contact sales</Link>
-            </Button>
-            <Button asChild size="lg">
-              <Link href="/register">Get started</Link>
-            </Button>
-          </div>
-        </div>
-      </section> */}
+      </AnimatedSection>
 
       {/* CTA Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <AnimatedSection variant="fadeInUp" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Interactive Grid Background */}
         <InteractiveGridPattern 
-          className="absolute inset-0 h-full w-full opacity-30"
+          className="absolute inset-0 opacity-30"
           width={60}
           height={60}
-          squares={[20, 15]}
           squaresClassName="fill-primary/10 stroke-primary/20 hover:fill-primary/20"
         />
         <div className="relative mx-auto max-w-4xl text-center px-6">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            Ready to deploy CRONOS?
-          </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
-            Request a personalized{' '}
-            <span className="font-semibold text-foreground">live demo</span> of
-            how <span className="font-semibold text-foreground">CRONOS</span>{' '}
-            can transform your project, site, or operation — regardless of
-            industry or size.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Button asChild variant="outline" size="lg">
-              <Link href="/contact">Contact sales</Link>
-            </Button>
-            <Button asChild size="lg">
-              <Link href="/register">Get started</Link>
-            </Button>
-          </div>
+          <RevealText>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">
+              Ready to deploy CRONOS?
+            </h2>
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
+              Request a personalized{' '}
+              <span className="font-semibold text-foreground">live demo</span> of
+              how <span className="font-semibold text-foreground">CRONOS</span>{' '}
+              can transform your project, site, or operation — regardless of
+              industry or size.
+            </p>
+          </RevealText>
+          <AnimatedSection variant="fadeInUp" delay={400}>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Button asChild variant="outline" size="lg">
+                <Link href="/contact">Contact sales</Link>
+              </Button>
+              <Button asChild size="lg">
+                <Link href="/register">Get started</Link>
+              </Button>
+            </div>
+          </AnimatedSection>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Footer */}
       <footer className="px-6 py-32 md:py-40">
