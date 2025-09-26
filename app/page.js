@@ -11,101 +11,16 @@ import { AnimatedDashboard } from '@/components/ui/animated-dashboard'
 import { Globe } from '@/components/ui/globe'
 import { InteractiveGridPattern } from '@/components/ui/interactive-grid-pattern'
 import { FeaturesShowcase } from '@/components/FeatuesShowcase'
-import { useState } from 'react'
+import { Navbar } from '@/components/Navbar'
 
 export default function LandingPage() {
-  const [activeDropdown, setActiveDropdown] = useState(null)
-
-  const productItems = [
-    { title: 'Plan', description: 'Set the product direction with projects and initiatives' },
-    { title: 'Build', description: 'Make progress with issue tracking and cycle planning' },
-    { title: 'New: Product Intelligence', description: 'Auto-apply triage suggestions', badge: 'New' }
-  ]
-
-  const resourcesItems = [
-    { title: 'Customer requests', description: 'Manage user feedback' },
-    { title: 'Insights', description: 'Realtime analytics' },
-    { title: 'Linear Asks', description: 'Workplace requests' },
-    { title: 'Integrations', description: 'Collaborate across tools' },
-    { title: 'Artificial intelligence', description: 'AI-powered workflows' }
-  ]
 
   return (
     <main className="min-h-screen w-full">
-      {/* Header */}
-      <header className="sticky top-0 z-50 px-4 py-4 bg-transparent backdrop-blur-md border-b border-border/40">
-        <div className="mx-auto max-w-6xl flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Image
-              src="/cronos_logo.png"
-              alt="Cronos"
-              width={28}
-              height={28}
-              className="rounded"
-            />
-            <span className="font-semibold">CRONOS</span>
-          </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
-            {/* Product Dropdown */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setActiveDropdown('product')}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <Link href="/features" className="hover:text-foreground flex items-center gap-1">
-                Features
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </Link>
-              
-              {activeDropdown === 'product' && (
-                <div className="absolute top-full left-0 mt-2 w-80 bg-background/95 backdrop-blur-md border border-border/50 rounded-lg shadow-xl p-4">
-                  <div className="space-y-1">
-                    <div className="text-xs font-medium text-muted-foreground mb-3">Core Features</div>
-                    {productItems.map((item, index) => (
-                      <Link
-                        key={index}
-                        href={`#${item.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
-                        className="block p-3 rounded-md hover:bg-muted/50 transition-colors group"
-                      >
-                        <div className="flex items-start justify-between">
-                          <div>
-                            <div className="font-medium text-foreground group-hover:text-primary flex items-center gap-2">
-                              {item.title}
-                              {item.badge && (
-                                <span className="text-xs bg-primary/20 text-primary px-1.5 py-0.5 rounded">
-                                  {item.badge}
-                                </span>
-                              )}
-                            </div>
-                            <div className="text-xs text-muted-foreground mt-1">
-                              {item.description}
-                            </div>
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <Link href="/resources" className="hover:text-foreground">Resources</Link>              
-            <Link href="/pricing" className="hover:text-foreground">Pricing</Link>
-            <Link href="/contact" className="hover:text-foreground">Contact</Link>
-            <Link href="/login" className="hover:text-foreground">
-              Log in
-            </Link>
-            <Button asChild size="sm">
-              <Link href="/register">Sign up</Link>
-            </Button>
-          </nav>
-        </div>
-      </header>
+      <Navbar />
 
       {/* Hero */}
-      <section className="relative isolate px-6 py-32 md:py-40 lg:py-28">
+      <section className="relative isolate px-6 py-32 md:py-40 lg:py-30">
         {/* Animated background blobs */}
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute -top-24 -left-16 size-[28rem] rounded-full bg-primary/15 blur-3xl animate-blob" />
@@ -454,7 +369,7 @@ export default function LandingPage() {
       </section> */}
 
       {/* CTA Section */}
-      <section className="relative px-6 py-32 md:py-40 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Interactive Grid Background */}
         <InteractiveGridPattern 
           className="absolute inset-0 h-full w-full opacity-30"
@@ -463,7 +378,7 @@ export default function LandingPage() {
           squares={[20, 15]}
           squaresClassName="fill-primary/10 stroke-primary/20 hover:fill-primary/20"
         />
-        <div className="relative mx-auto max-w-4xl text-center">
+        <div className="relative mx-auto max-w-4xl text-center px-6">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">
             Ready to deploy CRONOS?
           </h2>

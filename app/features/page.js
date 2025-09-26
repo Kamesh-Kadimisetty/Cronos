@@ -1,23 +1,14 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { Navbar } from '@/components/Navbar'
 
 export default function FeaturesPage() {
   return (
     <main className="min-h-screen w-full">
-      {/* Header */}
-      <header className="sticky top-0 z-50 px-4 py-4 bg-transparent backdrop-blur-md border-b border-border/40">
-        <div className="mx-auto max-w-6xl flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="font-semibold">CRONOS</span>
-          </Link>
-          <Button asChild variant="outline" size="sm">
-            <Link href="/">← Back to Home</Link>
-          </Button>
-        </div>
-      </header>
+      <Navbar />
 
       {/* Content */}
-      <section className="px-6 py-32 md:py-40">
+      <section className="px-6 py-32 md:py-34">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-8">
             Features
