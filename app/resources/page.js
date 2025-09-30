@@ -5,7 +5,7 @@ export default function ResourcesPage() {
       <Navbar />
 
       {/* Content */}
-      <section className="px-6 py-32 md:py-40">
+      <section className="px-6 py-32 md:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-8">
             Resources

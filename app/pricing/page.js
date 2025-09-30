@@ -9,7 +9,7 @@ export default function PricingPage() {
       <Navbar />
 
       {/* Content */}
-      <section className="px-6 py-32 md:py-24">
+      <section className="px-6 py-32 md:py-10">
         <div className="mx-auto max-w-6xl text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-8">
             Pricing

@@ -9,7 +9,7 @@ export default function ContactPage() {
       <Navbar />
 
       {/* Content */}
-      <section className="px-6 py-22 md:py-24">
+      <section className="px-6 py-22 md:py-10">
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
