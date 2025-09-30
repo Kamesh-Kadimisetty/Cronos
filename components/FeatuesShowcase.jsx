@@ -115,12 +115,11 @@ export function FeaturesShowcase() {
   
         {/* Feature Content */}
         <AnimatedSection variant="fadeInUp" delay={300} className="relative">
-          <AnimatedCard className="p-8 md:p-12 bg-gradient-to-br from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-0 ring-1 ring-border/50 shadow-xl" hoverScale={1.01}>
-            <div className="grid gap-8 lg:grid-cols-2 items-start">
+          <AnimatedCard className="p-6 md:p-8 bg-gradient-to-br rounded-xl from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-0 ring-1 ring-border/50 shadow-xl" hoverScale={1.01}>
+            <div className="grid gap-6 lg:grid-cols-2 items-start">
               {/* Left: Content */}
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="text-4xl">{features[activeFeature].icon}</div>
                   <div>
                     <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
                       {features[activeFeature].title}
@@ -195,4 +194,3 @@ export function FeaturesShowcase() {
       </div>
     )
   }
-  

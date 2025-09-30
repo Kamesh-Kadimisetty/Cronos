@@ -185,23 +185,14 @@ export default function LandingPage() {
                   </div>
                 </AnimatedStaggeredItem>
               </StaggeredContainer>
-              
-              <div className="flex flex-wrap items-center gap-4">
-                <Button asChild>
-                  <Link href="/register">Start Global Monitoring</Link>
-                </Button>
-                <Button asChild variant="outline">
-                  <Link href="#contact">View Coverage Map</Link>
-                </Button>
-              </div>
             </AnimatedSection>
             
             {/* Right: Globe */}
-            <AnimatedSection variant="scaleIn" delay={400} className="relative">
+            <section variant="scaleIn" delay={400} className="relative">
               <div className="relative h-[500px] w-full">
                 <Globe className="w-full h-full" />
               </div>
-            </AnimatedSection>
+            </section>
           </div>
         </div>
       </AnimatedSection>
@@ -225,11 +216,11 @@ export default function LandingPage() {
       {/* Features Section */}
       <AnimatedSection variant="fadeInUp" className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-6xl">
-          <RevealText className="mb-12 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+          <RevealText className="mb-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
               Core Features
             </h2>
-            <p className="text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-muted-foreground max-w-3xl mx-auto mb-0.5">
               Discover the powerful capabilities that make CRONOS the ultimate site intelligence platform
             </p>
           </RevealText>
@@ -256,17 +247,17 @@ export default function LandingPage() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection variant="fadeInUp" className="px-6 py-32 md:py-40">
+      {/* <AnimatedSection variant="fadeInUp" className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-6xl">
         <RevealText className="mb-6 text-center">
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight">Unified Data → CRONOS Intelligence → Action</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Unified Data → CRONOS Intelligence → Action</h2>
             <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">
               CRONOS fuses inputs from photos, documents, sensors, ERP, and voice to generate live site insights and route actions to the right people.
             </p>
           </RevealText>
-          <AnimatedBeamMultipleOutputDemo className="mt-2" />
+          <AnimatedBeamMultipleOutputDemo />
         </div>
-      </AnimatedSection>
+      </AnimatedSection> */}
 
       
       {/* How CRONOS Works */}

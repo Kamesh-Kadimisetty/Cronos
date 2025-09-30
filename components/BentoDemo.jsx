@@ -5,6 +5,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { Notifications } from "@/components/Notifications";
+import { AnimatedBeamMultipleOutputDemo } from "@/components/AnimatedBeam";
 const Placeholder = ({ className }) => (
   <div className={cn("bg-muted/20 rounded-md", className)} />
 );
@@ -85,7 +86,9 @@ const features = [
     cta: "View integrations",
     className: "col-span-3 lg:col-span-2",
     background: (
-      <Placeholder className="absolute right-2 top-4 h-[300px] w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
+      <div className="absolute inset-0 flex items-center justify-center border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" >
+        <AnimatedBeamMultipleOutputDemo className="w-full h-full" />
+      </div>
     ),
   },
   {
