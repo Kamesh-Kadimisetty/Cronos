@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
+import { ThemeToggle } from '@/components/ui/theme-toggle'
 import { useState, useRef, useEffect } from 'react'
 
 export function Navbar() {
@@ -207,12 +208,14 @@ export function Navbar() {
           >
             Contact
           </Link>
+          <div className="flex items-center gap-4 ml-22"></div>
           <Link href="/login" className="hover:text-foreground transition-colors">
-            Log in
-          </Link>
-          <Button asChild size="sm">
-            <Link href="/register">Sign up</Link>
+              Log in
+           </Link>
+          <Button asChild size="sm" showArrow arrowType="up-right">
+              <Link href="/register">Sign up</Link>
           </Button>
+          <ThemeToggle />
         </nav>
 
         {/* Mobile menu button */}
@@ -272,6 +275,10 @@ export function Navbar() {
               Contact
             </Link>
             <div className="pt-4 border-t border-border/40 space-y-3">
+              <div className="flex items-center justify-between py-2">
+                <span className="text-sm text-muted-foreground">Theme</span>
+                <ThemeToggle />
+              </div>
               <Link 
                 href="/login" 
                 className="block py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -279,7 +286,7 @@ export function Navbar() {
               >
                 Log in
               </Link>
-              <Button asChild size="sm" className="w-full">
+              <Button asChild size="sm" className="w-full" showArrow arrowType="up-right">
                 <Link href="/register" onClick={() => setMobileMenuOpen(false)}>Sign up</Link>
               </Button>
             </div>

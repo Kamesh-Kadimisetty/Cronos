@@ -1,8 +1,25 @@
+import React from 'react'
 import { useState } from 'react'
+import Image from 'next/image'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { AnimatedSection, StaggeredContainer, StaggeredItem, AnimatedCard } from '@/components/ui/scroll-animation'
-
+import {
+  ChevronUp,
+  HelpCircle,
+  MessageCircle,
+  LogOut,
+  Moon,
+  Sun,
+  Video,
+  CommandIcon,
+  Settings,
+  MapPin,
+  ChevronDown,
+  ScanEye,
+  Binoculars,
+  CameraIcon,
+} from "lucide-react";
 // Features Showcase Component
 export function FeaturesShowcase() {
     const [activeFeature, setActiveFeature] = useState(0)
@@ -11,8 +28,9 @@ export function FeaturesShowcase() {
       {
         id: 'live-surveillance',
         title: 'Live Surveillance',
-        icon: '📹',
-        description: 'Real-time monitoring system with multi-camera feeds',
+        icon: Binoculars,
+        image: '/live_surveiliance.png',
+        description: 'Real-time multi-camera monitoring system',
         details: {
           overview: 'Comprehensive real-time monitoring system that allows users to view and manage multiple camera feeds simultaneously.',
           keyFeatures: [
@@ -22,14 +40,14 @@ export function FeaturesShowcase() {
             'Camera Status Monitoring: Real-time status indicators (Online/Offline/Disabled)',
             'Fullscreen Mode: Immersive monitoring experience',
             'Zone-based Organization: Cameras grouped by zones for better organization'
-          ],
-          benefits: 'Monitor your entire site infrastructure from a single dashboard with intelligent layout management and real-time status updates.'
+          ]
         }
       },
       {
         id: 'sites',
         title: 'Sites',
-        icon: '🏢',
+        icon: MapPin,
+        image: '/sites.png',
         description: 'Hierarchical site management and organization',
         details: {
           overview: 'A hierarchical site management system that organizes security infrastructure into a structured hierarchy: Organization → Sites → Subprojects → Zones → Cameras.',
@@ -40,17 +58,17 @@ export function FeaturesShowcase() {
             'Project Management: Integrated project manager assignment and budget tracking',
             'Location Management: Geographic location tracking and organization',
             'Hierarchical Navigation: Collapsible sidebar with breadcrumb navigation'
-          ],
-          benefits: 'Organize complex site infrastructures with clear hierarchies, making it easy to manage large-scale deployments across multiple locations.'
+          ]
         }
       },
       {
-        id: 'threat-detection',
-        title: 'Threat Detection',
-        icon: '🚨',
-        description: 'AI-powered threat detection and alerts',
+        id: 'ai-monitoring',
+        title: 'AI Monitoring',
+        icon: ScanEye,
+        image: '/ai_monitoring.png',
+        description: 'AI-powered monitoring and alerts',
         details: {
-          overview: 'Advanced AI-powered threat detection system that analyzes camera feeds in real-time to identify potential security incidents and suspicious behavior.',
+          overview: 'Advanced AI-powered monitoring system that analyzes camera feeds in real-time to identify potential security incidents and suspicious behavior.',
           keyFeatures: [
             'AI-Powered Analytics: Intelligent threat detection using computer vision',
             'Real-time Alerts: Instant notifications for security incidents',
@@ -58,14 +76,14 @@ export function FeaturesShowcase() {
             'Integration with Live Surveillance: Seamless connection with camera feeds',
             'Security Analytics Dashboard: Comprehensive threat analysis and reporting',
             'Customizable Alert Rules: Configure detection sensitivity and alert criteria'
-          ],
-          benefits: 'Proactively identify and respond to security threats with AI-powered analysis that never sleeps, reducing response times and improving overall security.'
+          ]
         }
       },
       {
         id: 'camera-network',
         title: 'Camera Network',
-        icon: '📷',
+        icon: Video,
+        image: '/camera_network.png',
         description: 'Complete camera infrastructure management',
         details: {
           overview: 'Comprehensive camera infrastructure management system that handles all aspects of camera deployment, monitoring, and maintenance across your entire network.',
@@ -76,73 +94,74 @@ export function FeaturesShowcase() {
             'Camera Types: Fixed, PTZ, Dome, Bullet, and specialized cameras',
             'Status Monitoring: Real-time online/offline status tracking',
             'Advanced Search: Filter by name, model, location, IP address, and status'
-          ],
-          benefits: 'Manage your entire camera infrastructure from a centralized platform with detailed hardware tracking, network configuration, and health monitoring.'
+          ]
         }
       }
     ]
   
     return (
-      <div className="w-full">
-        {/* Feature Tabs */}
-        <StaggeredContainer className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          {features.map((feature, index) => (
-            <StaggeredItem key={feature.id}>
+      <div className="w-full px-6 lg:px-12 xl:px-20">
+        {/* Feature Tabs - Schematic Style */}
+        <div className="relative mb-12">
+          {/* Tab Navigation */}
+          <div className="flex flex-wrap justify-center gap-2 p-2 bg-muted/30 rounded-2xl border border-border/40 backdrop-blur-sm max-w-4xl mx-auto">
+            {features.map((feature, index) => (
               <button
+                key={feature.id}
                 onClick={() => setActiveFeature(index)}
-                className={`relative p-4 rounded-xl border transition-all duration-300 text-left w-full ${
+                className={`relative flex items-center gap-3 px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 ${
                   activeFeature === index
-                    ? 'bg-primary/10 border-primary/30 shadow-lg scale-105'
+                    ? 'bg-emerald-500/10 border-emerald-500/30 shadow-lg scale-105'
                     : 'bg-card/50 border-border/50 hover:bg-card/80 hover:border-border/80'
                 }`}
               >
-              <div className="flex flex-col items-center text-center gap-2">
-                <div>
-                  <h2 className={`font-semibold text-2xl md:text-sm ${
-                    activeFeature === index ? 'text-primary' : 'text-foreground'
-                  }`}>
-                    {feature.title}
-                  </h2>
+                <div className={`w-5 h-5 ${activeFeature === index ? 'text-emerald-600' : 'text-muted-foreground'}`}>
+                  {React.createElement(feature.icon)}
                 </div>
-              </div>
+                <span className="whitespace-nowrap">{feature.title}</span>
                 {activeFeature === index && (
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-emerald-500/10 via-emerald-500/20 to-emerald-500/10 -z-10" />
                 )}
               </button>
-            </StaggeredItem>
-          ))}
-        </StaggeredContainer>
+            ))}
+          </div>
+        </div>
   
-        {/* Feature Content */}
+        {/* Feature Content - Enhanced Layout */}
         <AnimatedSection variant="fadeInUp" delay={300} className="relative">
-          <AnimatedCard className="p-6 md:p-8 bg-gradient-to-br rounded-xl from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-0 ring-1 ring-border/50 shadow-xl" hoverScale={1.01}>
-            <div className="grid gap-6 lg:grid-cols-2 items-start">
+          <AnimatedCard className="p-6 md:p-8 lg:p-12 bg-gradient-to-br rounded-xl from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-0 ring-1 ring-border/50 shadow-xl" hoverScale={1.01}>
+            <div className="grid gap-8 lg:gap-16 xl:gap-20 lg:grid-cols-[1fr_1.5fr] items-start">
               {/* Left: Content */}
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
+                  <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
+                    <div className="w-6 h-6 text-emerald-600">
+                      {React.createElement(features[activeFeature].icon)}
+                    </div>
+                  </div>
                   <div>
                     <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
                       {features[activeFeature].title}
                     </h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground mt-1">
                       {features[activeFeature].description}
                     </p>
                   </div>
                 </div>
-  
+
                 <div className="space-y-4">
-                  <h4 className="text-lg font-semibold">Overview</h4>
+                  <h4 className="text-lg font-semibold text-foreground">Overview</h4>
                   <p className="text-muted-foreground leading-relaxed">
                     {features[activeFeature].details.overview}
                   </p>
                 </div>
-  
+
                 <div className="space-y-4">
-                  <h4 className="text-lg font-semibold">Key Features</h4>
+                  <h4 className="text-lg font-semibold text-foreground">Key Features</h4>
                   <ul className="space-y-3">
                     {features[activeFeature].details.keyFeatures.map((feature, index) => (
                       <li key={index} className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-2 h-2 rounded-full bg-primary mt-2" />
+                        <div className="flex-shrink-0 w-2 h-2 rounded-full bg-emerald-500 mt-2" />
                         <span className="text-sm text-muted-foreground leading-relaxed">
                           {feature}
                         </span>
@@ -150,42 +169,40 @@ export function FeaturesShowcase() {
                     ))}
                   </ul>
                 </div>
-              </div>
-  
-              {/* Right: Benefits */}
-              <div className="space-y-6">
-                <div className="p-6 rounded-xl bg-primary/5 border border-primary/20">
-                  <h4 className="text-lg font-semibold mb-3 text-primary">Benefits</h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {features[activeFeature].details.benefits}
-                  </p>
-                </div>
-  
-                {/* Visual representation */}
-                <div className="relative h-48 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 border border-border/50 overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-6xl opacity-20">
-                      {features[activeFeature].icon}
-                    </div>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="text-sm font-medium">
-                      {features[activeFeature].title} Dashboard
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      Interactive preview coming soon
-                    </div>
-                  </div>
-                </div>
-  
-                <div className="flex flex-wrap gap-3">
-                  <Button size="sm" className="flex-1">
+
+                <div className="flex flex-wrap gap-3 pt-4">
+                  <Button size="sm" className="flex-1 min-w-[120px]" showArrow arrowType="up-right">
                     Learn More
                   </Button>
-                  <Button size="sm" variant="outline" className="flex-1">
+                  <Button size="sm" variant="outline" className="flex-1 min-w-[120px]"  showArrow arrowType="up-right">
                     View Demo
                   </Button>
+                </div>
+              </div>
+
+              {/* Right: Feature Image */}
+              <div className="space-y-8">
+                <div className="relative rounded-2xl overflow-hidden border border-border/50 bg-muted/30 shadow-lg">
+                  <div className="aspect-[6/5] relative">
+                    <Image
+                      src={features[activeFeature].image}
+                      alt={`${features[activeFeature].title} Dashboard`}
+                      fill
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
+                  </div>
+                  
+                  {/* Image Overlay */}
+                  {/* <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background/90 to-transparent">
+                    <div className="text-sm font-medium text-foreground">
+                      {features[activeFeature].title} Interface
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      Real-time dashboard preview
+                    </div>
+                  </div> */}
                 </div>
               </div>
             </div>

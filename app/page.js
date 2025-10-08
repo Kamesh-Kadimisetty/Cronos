@@ -43,20 +43,64 @@ export default function LandingPage() {
               where progress must be tracked, validated, and executed.
             </TextReveal>
             <TextReveal delay={1.6} className="flex flex-wrap items-center gap-4">
-              <Button asChild>
+              <Button asChild showArrow arrowType="right">
                 <Link href="/register">See it in Action</Link>
               </Button>
-              <Button asChild variant="secondary">
+              <Button asChild variant="secondary" showArrow arrowType="right">
                 <Link href="#product-intelligence">Request Deployment</Link>
               </Button>
             </TextReveal>
           </div>
 
-          {/* Right: tilted preview panel (Linear-style) */}
+          {/* Right: Command Center Dashboard Image */}
+          <TextReveal delay={0.6} className="relative animate-float">
+            {/* Glow effect background */}
+            <div className="absolute -inset-8 -z-10 rounded-[32px] bg-gradient-to-br from-primary/30 via-primary/10 to-transparent blur-3xl opacity-60" />
+            
+            {/* Main image container */}
+            <div className="relative group">
+              {/* Image wrapper with perfect styling */}
+              <div className="relative overflow-hidden rounded-2xl border border-border/20 shadow-2xl bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm md:-rotate-1 hover:rotate-0 transition-all duration-700 ease-out">
+                {/* Premium border gradient */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 via-transparent to-primary/10 p-[1px]">
+                  <div className="h-full w-full rounded-2xl bg-background/95 backdrop-blur-md" />
+                </div>
+                
+                {/* Command Center Image */}
+                <div className="relative z-10 p-2">
+                  <Image
+                    src="/command_center.png"
+                    alt="CRONOS Command Center - Real-time surveillance intelligence and monitoring overview"
+                    width={800}
+                    height={600}
+                    className="w-full h-auto rounded-xl object-cover object-center transition-all duration-500 group-hover:scale-[1.02] dark:brightness-75 dark:contrast-110"
+                    priority
+                    quality={95}
+                  />
+                </div>
+
+                {/* Subtle overlay for depth */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-background/20 via-transparent to-transparent pointer-events-none" />
+                
+                {/* Premium shimmer effect */}
+                <div className="absolute -left-2 top-0 h-full w-1/2 bg-gradient-to-r from-transparent via-white/8 to-transparent animate-shimmer pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+              </div>
+
+              {/* Floating status indicator */}
+              <div className="absolute -top-2 -right-2 z-20">
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/90 backdrop-blur-sm border border-emerald-400/30 shadow-lg">
+                  <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                  <span className="text-xs font-medium text-white">Live</span>
+                </div>
+              </div>
+            </div>
+          </TextReveal>
+
+          {/* 
+          COMMENTED OUT: Original side panel code
           <TextReveal delay={0.6} className="relative animate-float">
             <div className="absolute -inset-6 -z-10 rounded-[28px] bg-gradient-to-br from-primary/20 via-transparent to-transparent blur-2xl" />
             <Card className="relative overflow-hidden rounded-2xl border-0 ring-1 ring-border/40 shadow-2xl bg-card/70 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:-rotate-2">
-              {/* Top bar / breadcrumb */}
               <div className="flex items-center gap-2 px-4 md:px-6 h-12 border-b/50 border-border/40 bg-muted/30">
                 <div className="size-2 rounded-full bg-primary" />
                 <div className="text-xs text-muted-foreground">CRONOS</div>
@@ -68,17 +112,11 @@ export default function LandingPage() {
                   <div className="size-1.5 rounded-full bg-muted" />
                 </div>
               </div>
-
-              {/* Content */}
               <div className="p-4 md:p-6">
                 <div className="size-10 rounded-lg grid place-items-center bg-primary/10 text-primary mb-4">
                   <span className="text-lg">🛰️</span>
                 </div>
-
                 <div className="flex items-center gap-2 mb-3">
-                  {/* <span className="rounded-md bg-primary/20 text-primary px-2 py-0.5 text-sm font-medium ring-1 ring-primary/30">
-                    Real-world progress
-                  </span> */}
                   <span className="text-lg md:text-xl font-semibold">
                     Real-world progress
                   </span>
@@ -86,15 +124,12 @@ export default function LandingPage() {
                     AI
                   </span>
                 </div>
-
                 <p className="text-sm md:text-base text-muted-foreground max-w-md">
                   Track, validate, and automate site progress with visual
                   intelligence and real-time data fusion. CRONOS empowers teams
                   to see, understand, and drive execution across any physical
                   environment.
                 </p>
-
-                {/* Faux lines */}
                 <div className="mt-6 space-y-2">
                   {[
                     'w-5/6 bg-primary/20',
@@ -107,8 +142,6 @@ export default function LandingPage() {
                     <div key={i} className={`h-2 rounded ${cls}`} />
                   ))}
                 </div>
-
-                {/* Bottom blocks */}
                 <div className="mt-6 grid grid-cols-5 gap-2">
                   {Array.from({ length: 10 }).map((_, i) => (
                     <div
@@ -118,13 +151,11 @@ export default function LandingPage() {
                   ))}
                 </div>
               </div>
-
-              {/* Bottom fade */}
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-background/80 to-transparent" />
-              {/* subtle shimmer */}
               <div className="pointer-events-none absolute -left-1 top-0 h-full w-1/3 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer" />
             </Card>
           </TextReveal>
+          */}
         </div>
       </section>
 
@@ -214,9 +245,9 @@ export default function LandingPage() {
       </section> */}
 
       {/* Features Section */}
-      <AnimatedSection variant="fadeInUp" className="px-6 py-32 md:py-40">
-        <div className="mx-auto max-w-6xl">
-          <RevealText className="mb-4 text-center">
+      <AnimatedSection variant="fadeInUp" className="py-32 md:py-40">
+        <div className="w-full">
+          <RevealText className="mb-4 text-center px-6 lg:px-12 xl:px-20">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
               Core Features
             </h2>
