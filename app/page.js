@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { BentoDemo } from '@/components/BentoDemo'
 import { AnimatedBeamMultipleOutputDemo } from '@/components/AnimatedBeam'
+import { CronosDataFlow } from '@/components/CronosDataFlow'
 import { WordByWordReveal, TextReveal, StaggeredTextReveal, StaggeredItem } from '@/components/ui/text-reveal'
 import { ProcessSteps } from '@/components/ui/process-steps'
 import { AnimatedDashboard } from '@/components/ui/animated-dashboard'
@@ -13,6 +14,7 @@ import { InteractiveGridPattern } from '@/components/ui/interactive-grid-pattern
 import { FeaturesShowcase } from '@/components/FeatuesShowcase'
 import { Navbar } from '@/components/Navbar'
 import { AnimatedSection, StaggeredContainer, StaggeredItem as AnimatedStaggeredItem, RevealText, AnimatedCard, FloatingElement } from '@/components/ui/scroll-animation'
+import { Footer } from '@/components/Footer'
 
 export default function LandingPage() {
 
@@ -43,10 +45,10 @@ export default function LandingPage() {
               where progress must be tracked, validated, and executed.
             </TextReveal>
             <TextReveal delay={1.6} className="flex flex-wrap items-center gap-4">
-              <Button asChild showArrow arrowType="right">
+              <Button asChild showArrow arrowType="up-right">
                 <Link href="/register">See it in Action</Link>
               </Button>
-              <Button asChild variant="secondary" showArrow arrowType="right">
+              <Button asChild variant="secondary" showArrow arrowType="up-right">
                 <Link href="#product-intelligence">Request Deployment</Link>
               </Button>
             </TextReveal>
@@ -95,67 +97,6 @@ export default function LandingPage() {
               </div>
             </div>
           </TextReveal>
-
-          {/* 
-          COMMENTED OUT: Original side panel code
-          <TextReveal delay={0.6} className="relative animate-float">
-            <div className="absolute -inset-6 -z-10 rounded-[28px] bg-gradient-to-br from-primary/20 via-transparent to-transparent blur-2xl" />
-            <Card className="relative overflow-hidden rounded-2xl border-0 ring-1 ring-border/40 shadow-2xl bg-card/70 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:-rotate-2">
-              <div className="flex items-center gap-2 px-4 md:px-6 h-12 border-b/50 border-border/40 bg-muted/30">
-                <div className="size-2 rounded-full bg-primary" />
-                <div className="text-xs text-muted-foreground">CRONOS</div>
-                <span className="text-muted-foreground/40">›</span>
-                <div className="text-xs">Site Overview</div>
-                <div className="ml-auto flex items-center gap-2 text-muted-foreground/60">
-                  <div className="size-1.5 rounded-full bg-muted" />
-                  <div className="size-1.5 rounded-full bg-muted" />
-                  <div className="size-1.5 rounded-full bg-muted" />
-                </div>
-              </div>
-              <div className="p-4 md:p-6">
-                <div className="size-10 rounded-lg grid place-items-center bg-primary/10 text-primary mb-4">
-                  <span className="text-lg">🛰️</span>
-                </div>
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-lg md:text-xl font-semibold">
-                    Real-world progress
-                  </span>
-                  <span className="ml-1 rounded-sm bg-emerald-500/20 px-1 text-[10px] leading-4 text-emerald-500">
-                    AI
-                  </span>
-                </div>
-                <p className="text-sm md:text-base text-muted-foreground max-w-md">
-                  Track, validate, and automate site progress with visual
-                  intelligence and real-time data fusion. CRONOS empowers teams
-                  to see, understand, and drive execution across any physical
-                  environment.
-                </p>
-                <div className="mt-6 space-y-2">
-                  {[
-                    'w-5/6 bg-primary/20',
-                    'w-2/3 bg-muted/40',
-                    'w-4/5 bg-muted/40',
-                    'w-5/6 bg-muted/40',
-                    'w-2/3 bg-muted/40',
-                    'w-4/5 bg-muted/40',
-                  ].map((cls, i) => (
-                    <div key={i} className={`h-2 rounded ${cls}`} />
-                  ))}
-                </div>
-                <div className="mt-6 grid grid-cols-5 gap-2">
-                  {Array.from({ length: 10 }).map((_, i) => (
-                    <div
-                      key={i}
-                      className={`h-2 rounded ${i < 2 ? 'bg-primary/20' : 'bg-muted/40'}`}
-                    />
-                  ))}
-                </div>
-              </div>
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-background/80 to-transparent" />
-              <div className="pointer-events-none absolute -left-1 top-0 h-full w-1/3 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer" />
-            </Card>
-          </TextReveal>
-          */}
         </div>
       </section>
 
@@ -228,21 +169,6 @@ export default function LandingPage() {
         </div>
       </AnimatedSection>
 
-       {/* Logos */}
-      {/* <section className="px-6 pb-16">
-        <div className="mx-auto max-w-6xl">
-          <div className="text-center text-xs uppercase tracking-wide text-muted-foreground mb-6">
-            Trusted by modern operations teams
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 opacity-70">
-            {['Aurora', 'Helix', 'Nimbus', 'Quanta', 'Vector', 'Zenith'].map((name) => (
-              <div key={name} className="flex items-center justify-center rounded-md border bg-card py-3 text-sm">
-                {name}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* Features Section */}
       <AnimatedSection variant="fadeInUp" className="py-32 md:py-40">
@@ -278,17 +204,11 @@ export default function LandingPage() {
         </div>
       </AnimatedSection>
 
-      {/* <AnimatedSection variant="fadeInUp" className="px-6 py-32 md:py-40">
-        <div className="mx-auto max-w-6xl">
-        <RevealText className="mb-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Unified Data → CRONOS Intelligence → Action</h2>
-            <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">
-              CRONOS fuses inputs from photos, documents, sensors, ERP, and voice to generate live site insights and route actions to the right people.
-            </p>
-          </RevealText>
-          <AnimatedBeamMultipleOutputDemo />
+      <AnimatedSection variant="fadeInUp" className="px-6 py-32 md:py-40">
+        <div className="mx-auto max-w-7xl">
+          <CronosDataFlow />
         </div>
-      </AnimatedSection> */}
+      </AnimatedSection>
 
       
       {/* How CRONOS Works */}
@@ -400,210 +320,7 @@ export default function LandingPage() {
       </AnimatedSection>
 
       {/* Footer */}
-      <footer className="px-6 py-32 md:py-40">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
-            {/* Logo */}
-            <div className="col-span-2 md:col-span-1">
-              <div className="flex items-center gap-2 mb-4">
-                <Image
-                  src="/cronos_logo.png"
-                  alt="Cronos"
-                  width={24}
-                  height={24}
-                  className="rounded"
-                />
-                <span className="font-semibold">CRONOS</span>
-              </div>
-            </div>
-
-            {/* Features */}
-            <div>
-              <h3 className="font-semibold mb-4">Features</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link href="#visual-ai" className="hover:text-foreground">
-                    Visual AI
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#data-fusion" className="hover:text-foreground">
-                    Data Fusion
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#llm-interface" className="hover:text-foreground">
-                    LLM Interface
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#alerts" className="hover:text-foreground">
-                    Alerts
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#security" className="hover:text-foreground">
-                    Security
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#mobile" className="hover:text-foreground">
-                    Mobile
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Product */}
-            <div>
-              <h3 className="font-semibold mb-4">Product</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link href="#pricing" className="hover:text-foreground">
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#method" className="hover:text-foreground">
-                    Method
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#integrations" className="hover:text-foreground">
-                    Integrations
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#changelog" className="hover:text-foreground">
-                    Changelog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#docs" className="hover:text-foreground">
-                    Documentation
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#download" className="hover:text-foreground">
-                    Download
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Company */}
-            <div>
-              <h3 className="font-semibold mb-4">Company</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link href="#about" className="hover:text-foreground">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#customers" className="hover:text-foreground">
-                    Customers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#careers" className="hover:text-foreground">
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#now" className="hover:text-foreground">
-                    Now
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#readme" className="hover:text-foreground">
-                    README
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#quality" className="hover:text-foreground">
-                    Quality
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Resources */}
-            <div>
-              <h3 className="font-semibold mb-4">Resources</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link href="#developers" className="hover:text-foreground">
-                    Developers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#status" className="hover:text-foreground">
-                    Status
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#startups" className="hover:text-foreground">
-                    Startups
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#vulnerability" className="hover:text-foreground">
-                    Report vulnerability
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#dpa" className="hover:text-foreground">
-                    DPA
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#privacy" className="hover:text-foreground">
-                    Privacy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#terms" className="hover:text-foreground">
-                    Terms
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Connect */}
-            <div>
-              <h3 className="font-semibold mb-4">Connect</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link href="/contact" className="hover:text-foreground">
-                    Contact us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#community" className="hover:text-foreground">
-                    Community
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#twitter" className="hover:text-foreground">
-                    X (Twitter)
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#github" className="hover:text-foreground">
-                    GitHub
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#youtube" className="hover:text-foreground">
-                    YouTube
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </main>
   )
 }

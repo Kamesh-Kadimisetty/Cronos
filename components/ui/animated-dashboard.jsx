@@ -12,18 +12,18 @@ export function AnimatedDashboard() {
   const workflowCards = [
     {
       id: 1,
-      title: "Build multi-step agents calling custom tools",
-      description: "Create intelligent systems that monitor your construction site in real-time. Integrate any sensor, camera, drone feed, or data source as easily as drag-and-drop. Our AI agents continuously analyze visual data, track progress against schedules, and automatically generate actionable insights for your team."
+      title: "AI-Powered Surveillance Intelligence",
+      description: "Deploy advanced computer vision and machine learning to monitor multiple camera feeds simultaneously. Our AI automatically detects anomalies, tracks movement patterns, identifies security threats, and generates real-time alerts with precise location data and threat assessment."
     },
     {
       id: 2,
-      title: "Chat with your own data",
-      description: "Use voice commands, mobile apps, or our embedded chat interface to get accurate insights from your site data, create tasks, and complete workflows. Ask questions in natural language and get instant responses based on real-time site conditions, historical data, and predictive analytics and many other things."
+      title: "Natural Language Site Control",
+      description: "Use voice commands, mobile apps, or chat interface to control your surveillance network and get instant insights. Ask questions like 'Show me all cameras in Zone A' or 'Alert me if anyone enters the restricted area' and get immediate responses with visual confirmation."
     },
     {
       id: 3,
-      title: "Self-host everything – including AI models",
-      description: "Protect your construction data by deploying on-premises or in your private cloud. Maintain complete control over your site intelligence with enterprise-grade security, custom AI models, and full data sovereignty. Scale from single sites to enterprise-wide deployments and many other things and more ." 
+      title: "Enterprise-Grade Security & Privacy",
+      description: "Deploy CRONOS on-premises or in your private cloud with complete data sovereignty. Maintain full control over your surveillance data with end-to-end encryption, custom AI models, and enterprise-grade security. Scale from single sites to global operations." 
     }
   ];
 
@@ -120,10 +120,10 @@ export function AnimatedDashboard() {
         {/* Header */}
         <div className="relative pt-8 pb-6 px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-2">
-            The fast way to actually
+            The intelligent way to
           </h2>
           <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">
-            get AI working in your construction site
+            secure and monitor your sites
           </h2>
         </div>
 
