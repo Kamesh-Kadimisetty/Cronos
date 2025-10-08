@@ -5,20 +5,10 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { AnimatedSection, StaggeredContainer, StaggeredItem, AnimatedCard } from '@/components/ui/scroll-animation'
 import {
-  ChevronUp,
-  HelpCircle,
-  MessageCircle,
-  LogOut,
-  Moon,
-  Sun,
   Video,
-  CommandIcon,
-  Settings,
   MapPin,
-  ChevronDown,
   ScanEye,
   Binoculars,
-  CameraIcon,
 } from "lucide-react";
 // Features Showcase Component
 export function FeaturesShowcase() {

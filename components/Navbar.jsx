@@ -1,10 +1,17 @@
 'use client'
+import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
 import { useState, useRef, useEffect } from 'react'
+import {
+  Video,
+  MapPin,
+  ScanEye,
+  Binoculars,
+} from "lucide-react";
 
 export function Navbar() {
   const pathname = usePathname()
@@ -15,30 +22,29 @@ export function Navbar() {
 
   const featuresItems = [
     { 
-      title: 'Visual AI Intelligence', 
-      description: 'Computer vision for real-time site monitoring and analysis',
-      icon: '👁️',
-      href: '/features#visual-ai',
+      title: 'Live Surveillance', 
+      description: 'Real-time multi-camera monitoring with grid views and live streaming',
+      icon: Binoculars,
+      href: '/features#live-surveillance',
       badge: 'Popular'
-
     },
     { 
-      title: 'Smart Alerts & Notifications', 
-      description: 'AI-powered alerts routed to the right people at the right time',
-      icon: '🚨',
-      href: '/features#alerts'
+      title: 'AI Monitoring', 
+      description: 'AI-powered threat detection and pattern recognition analytics',
+      icon: ScanEye,
+      href: '/features#ai-monitoring'
     },
     { 
-      title: 'Enterprise Security', 
-      description: 'End-to-end encryption with full audit trails',
-      icon: '🔒',
-      href: '/features#security'
+      title: 'Site Management', 
+      description: 'Hierarchical organization of sites, zones, and camera networks',
+      icon: MapPin,
+      href: '/features#sites'
     },
     { 
-      title: 'Custom Integrations', 
-      description: 'Connect with your existing tools and workflows',
-      icon: '⚡',
-      href: '/features#integrations',
+      title: 'Camera Network', 
+      description: 'Complete camera infrastructure management and configuration',
+      icon: Video,
+      href: '/features#camera-network'
     }
   ]
 
@@ -147,7 +153,7 @@ export function Navbar() {
                       onClick={() => setActiveDropdown(null)}
                     >
                       <div className="flex-shrink-0 w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center text-sm group-hover:bg-primary/20 transition-colors">
-                        {item.icon}
+                        {React.createElement(item.icon, { className: "w-4 h-4" })}
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1">
