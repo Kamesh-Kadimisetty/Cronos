@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Navbar } from '@/components/Navbar'
+import { Footer } from '@/components/Footer'
 
 export default function ContactPage() {
   return (
@@ -9,7 +10,7 @@ export default function ContactPage() {
       <Navbar />
 
       {/* Content */}
-      <section className="px-6 py-22 md:py-10">
+      <section className="px-6 py-22 md:py-28">
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
@@ -85,6 +86,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      <Footer />
     </main>
   )
 }

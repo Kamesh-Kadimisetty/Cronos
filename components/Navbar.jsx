@@ -11,6 +11,8 @@ import {
   MapPin,
   ScanEye,
   Binoculars,
+  Bot
+
 } from "lucide-react";
 
 export function Navbar() {
@@ -36,15 +38,15 @@ export function Navbar() {
     },
     { 
       title: 'Site Management', 
-      description: 'Hierarchical organization of sites, zones, and camera networks',
+      description: 'Hierarchical organization of sites, zones, and AI agents',
       icon: MapPin,
       href: '/features#sites'
     },
     { 
-      title: 'Camera Network', 
-      description: 'Complete camera infrastructure management and configuration',
-      icon: Video,
-      href: '/features#camera-network'
+      title: 'AI Agents', 
+      description: 'Complete AI agents management and configuration',
+      icon: Bot,
+      href: '/features#ai-agents'
     }
   ]
 

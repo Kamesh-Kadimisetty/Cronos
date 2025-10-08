@@ -9,6 +9,7 @@ import {
   MapPin,
   ScanEye,
   Binoculars,
+  Bot
 } from "lucide-react";
 // Features Showcase Component
 export function FeaturesShowcase() {
@@ -27,7 +28,6 @@ export function FeaturesShowcase() {
             'Multi-Layout Support: Custom surveillance layouts with different camera arrangements',
             'Grid Views: 2x2 and 3x3 grid layouts for optimal viewing',
             'Real-time Streaming: Live RTSP stream integration with processed video feeds',
-            'Camera Status Monitoring: Real-time status indicators (Online/Offline/Disabled)',
             'Fullscreen Mode: Immersive monitoring experience',
             'Zone-based Organization: Cameras grouped by zones for better organization'
           ]
@@ -47,7 +47,6 @@ export function FeaturesShowcase() {
             'Security Levels: Configurable levels (Low, Medium, High, Critical)',
             'Project Management: Integrated project manager assignment and budget tracking',
             'Location Management: Geographic location tracking and organization',
-            'Hierarchical Navigation: Collapsible sidebar with breadcrumb navigation'
           ]
         }
       },
@@ -62,7 +61,6 @@ export function FeaturesShowcase() {
           keyFeatures: [
             'AI-Powered Analytics: Intelligent threat detection using computer vision',
             'Real-time Alerts: Instant notifications for security incidents',
-            'Pattern Recognition: Advanced algorithms to identify suspicious behavior',
             'Integration with Live Surveillance: Seamless connection with camera feeds',
             'Security Analytics Dashboard: Comprehensive threat analysis and reporting',
             'Customizable Alert Rules: Configure detection sensitivity and alert criteria'
@@ -70,19 +68,19 @@ export function FeaturesShowcase() {
         }
       },
       {
-        id: 'camera-network',
-        title: 'Camera Network',
-        icon: Video,
-        image: '/camera_network.png',
-        description: 'Complete camera infrastructure management',
+        id: 'ai-agents',
+        title: 'AI Agents',
+        icon: Bot,
+        image: '/ai_agents.png',
+        description: 'Complete AI agents management',
         details: {
-          overview: 'Comprehensive camera infrastructure management system that handles all aspects of camera deployment, monitoring, and maintenance across your entire network.',
+          overview: 'Comprehensive AI agents management system that handles all aspects of AI agents deployment, monitoring, and maintenance across your entire network.',
           keyFeatures: [
-            'Complete Camera Lifecycle: Add, edit, delete, and monitor cameras',
-            'Network Configuration: RTSP URL setup with authentication support',
+            'Complete AI Agents Lifecycle: Add, edit, delete, and monitor AI agents',
+            'Network Configuration: AI agents URL setup with authentication support',
+            'AI Agents Types: Fixed, PTZ, Dome, Bullet, and specialized AI agents',
             'Hardware Tracking: Manufacturer, model, serial numbers, and MAC addresses',
-            'Camera Types: Fixed, PTZ, Dome, Bullet, and specialized cameras',
-            'Status Monitoring: Real-time online/offline status tracking',
+            'Status Monitoring: Real-time online/offline AI agents monitoring status tracking',
             'Advanced Search: Filter by name, model, location, IP address, and status'
           ]
         }

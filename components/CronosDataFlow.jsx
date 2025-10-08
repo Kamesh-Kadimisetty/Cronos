@@ -187,39 +187,6 @@ export function CronosDataFlow({ className }) {
           CRONOS AI
         </div>
       </div>
-
-      {/* Feature Cards Below */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-6xl mx-auto">
-        <div className="p-6 rounded-xl bg-card/50 border border-border/50 backdrop-blur-sm">
-          <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mb-4">
-            <Camera className="w-5 h-5 text-blue-600" />
-          </div>
-          <h3 className="font-semibold mb-2">Multi-Source Input</h3>
-          <p className="text-sm text-muted-foreground">
-            Cameras, sensors, documents, and mobile data streams converge into a unified intelligence platform.
-          </p>
-        </div>
-        
-        <div className="p-6 rounded-xl bg-card/50 border border-border/50 backdrop-blur-sm">
-          <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4">
-            <Brain className="w-5 h-5 text-emerald-600" />
-          </div>
-          <h3 className="font-semibold mb-2">AI Processing</h3>
-          <p className="text-sm text-muted-foreground">
-            Advanced AI analyzes patterns, detects anomalies, and generates actionable insights in real-time.
-          </p>
-        </div>
-        
-        <div className="p-6 rounded-xl bg-card/50 border border-border/50 backdrop-blur-sm">
-          <div className="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center mb-4">
-            <Shield className="w-5 h-5 text-indigo-600" />
-          </div>
-          <h3 className="font-semibold mb-2">Intelligent Actions</h3>
-          <p className="text-sm text-muted-foreground">
-            Automated alerts, dashboard updates, and analytics reports delivered to the right people at the right time.
-          </p>
-        </div>
-      </div>
     </div>
   );
 }

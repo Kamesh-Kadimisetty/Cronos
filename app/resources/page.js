@@ -1,11 +1,13 @@
 import { Navbar } from '@/components/Navbar'
+import { Footer } from '@/components/Footer'
+
 export default function ResourcesPage() {
   return (
     <main className="min-h-screen w-full">
       <Navbar />
 
       {/* Content */}
-      <section className="px-6 py-32 md:py-20">
+        <section className="px-6 py-32 md:py-28">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-8">
             Resources
@@ -32,6 +34,7 @@ export default function ResourcesPage() {
           </div>
         </div>
       </section>
+      <Footer />
     </main>
   )
 }

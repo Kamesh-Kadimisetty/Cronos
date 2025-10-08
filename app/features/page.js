@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Navbar } from '@/components/Navbar'
+import { Footer } from '@/components/Footer'
 
 export default function FeaturesPage() {
   return (
@@ -35,6 +36,7 @@ export default function FeaturesPage() {
           </div>
         </div>
       </section>
+      <Footer />
     </main>
   )
 }

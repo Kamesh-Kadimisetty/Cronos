@@ -23,7 +23,7 @@ export default function LandingPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative isolate px-6 py-32 md:py-40 lg:py-30">
+      <section className="relative isolate px-6 py-32 md:py-40 lg:py-38">
         {/* Animated background blobs */}
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute -top-24 -left-16 size-[28rem] rounded-full bg-primary/15 blur-3xl animate-blob" />
@@ -49,7 +49,7 @@ export default function LandingPage() {
                 <Link href="/register">See it in Action</Link>
               </Button>
               <Button asChild variant="secondary" showArrow arrowType="up-right">
-                <Link href="#product-intelligence">Request Deployment</Link>
+                <Link href="#product-intelligence">Book a Demo</Link>
               </Button>
             </TextReveal>
           </div>
@@ -75,7 +75,7 @@ export default function LandingPage() {
                     alt="CRONOS Command Center - Real-time surveillance intelligence and monitoring overview"
                     width={800}
                     height={600}
-                    className="w-full h-auto rounded-xl object-cover object-center transition-all duration-500 group-hover:scale-[1.02] dark:brightness-75 dark:contrast-110"
+                    className="w-full h-auto rounded-xl object-cover object-center transition-all duration-500 group-hover:scale-[1.02]"
                     priority
                     quality={95}
                   />
@@ -236,54 +236,7 @@ export default function LandingPage() {
           </AnimatedSection>
         </div>
       </AnimatedSection>
-      
-      {/* Why CRONOS? */}
-      <AnimatedSection variant="fadeInUp" className="px-6 py-32 md:py-40">
-        <div className="mx-auto max-w-6xl">
-          <RevealText className="text-center mb-10">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-              Why CRONOS?
-            </h2>
-          </RevealText>
-          <StaggeredContainer className="grid gap-6 md:grid-cols-3">
-            {[
-              {
-                title: 'Universal Intelligence',
-                desc: 'Field intelligence for any scenario where the real world must be understood and driven forward with AI.',
-              },
-              {
-                title: 'Zero Friction',
-                desc: 'No forms to fill. Speak, upload photos, or send voice notes. CRONOS handles the rest with structured, auditable action.',
-              },
-              {
-                title: 'Enterprise Ready',
-                desc: 'Mobile‑first, offline‑friendly. Full control, encryption, and modular deployment.',
-              },
-            ].map((item) => (
-              <AnimatedStaggeredItem key={item.title}>
-                <AnimatedCard
-                  className="group relative overflow-hidden rounded-2xl border-0 ring-1 ring-border/50 bg-gradient-to-br from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 p-6 shadow-lg"
-                  hoverScale={1.03}
-                >
-                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-[radial-gradient(1200px_200px_at_0%_0%,hsl(var(--primary)/0.08),transparent)]" />
-                <div className="relative flex items-center gap-3">
-                  <div className="grid size-9 place-items-center rounded-md bg-primary/10 text-primary ring-1 ring-primary/25 shadow-inner">
-                    ◆
-                  </div>
-                  <h3 className="text-base md:text-lg font-semibold tracking-tight">
-                    {item.title}
-                  </h3>
-                </div>
-                <p className="relative mt-3 text-sm text-muted-foreground leading-relaxed">
-                  {item.desc}
-                </p>
-                </AnimatedCard>
-              </AnimatedStaggeredItem>
-            ))}
-          </StaggeredContainer>
-        </div>
-      </AnimatedSection>
-
+    
       {/* CTA Section */}
       <AnimatedSection variant="fadeInUp" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Interactive Grid Background */}
