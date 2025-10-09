@@ -207,6 +207,12 @@ export default function LandingPage() {
         </div>
       </AnimatedSection>
 
+      <Workflow />
+
+      {/* Enterprise Security Section */}
+      <EnterpriseSecuritySection />
+    
+
       <AnimatedSection variant="fadeInUp" className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-7xl">
           <CronosDataFlow />
@@ -214,9 +220,7 @@ export default function LandingPage() {
       </AnimatedSection>
 
       
-      {/* Enterprise Security Section */}
-      <EnterpriseSecuritySection />
-    
+
       {/* How CRONOS Works */}
       <AnimatedSection variant="fadeInUp" className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-6xl">
@@ -243,7 +247,6 @@ export default function LandingPage() {
         </div>
       </AnimatedSection>
 
-      <Workflow />
           
       {/* CTA Section */}
       <AnimatedSection variant="fadeInUp" className="relative min-h-screen flex items-center justify-center overflow-hidden">
