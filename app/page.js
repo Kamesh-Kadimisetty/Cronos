@@ -16,6 +16,7 @@ import { Navbar } from '@/components/Navbar'
 import { AnimatedSection, StaggeredContainer, StaggeredItem as AnimatedStaggeredItem, RevealText, AnimatedCard, FloatingElement } from '@/components/ui/scroll-animation'
 import { Footer } from '@/components/Footer'
 import { EnterpriseSecuritySection } from '@/components/EnterpriseSecuritySection'
+import { Workflow } from '@/components/Workflow'
 
 export default function LandingPage() {
 
@@ -241,7 +242,9 @@ export default function LandingPage() {
           </AnimatedSection>
         </div>
       </AnimatedSection>
-    
+
+      <Workflow />
+          
       {/* CTA Section */}
       <AnimatedSection variant="fadeInUp" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Interactive Grid Background */}
