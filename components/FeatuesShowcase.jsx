@@ -21,15 +21,15 @@ export function FeaturesShowcase() {
         title: 'Live Surveillance',
         icon: Binoculars,
         image: '/live_surveiliance.png',
-        description: 'Real-time multi-camera monitoring system',
+        description: 'Multi-camera monitoring with intelligent layouts',
         details: {
-          overview: 'Comprehensive real-time monitoring system that allows users to view and manage multiple camera feeds simultaneously.',
+          overview: 'Real-time monitoring system for simultaneous multi-camera feed management with intelligent layout optimization.',
           keyFeatures: [
-            'Multi-Layout Support: Custom surveillance layouts with different camera arrangements',
-            'Grid Views: 2x2 and 3x3 grid layouts for optimal viewing',
-            'Real-time Streaming: Live RTSP stream integration with processed video feeds',
-            'Fullscreen Mode: Immersive monitoring experience',
-            'Zone-based Organization: Cameras grouped by zones for better organization'
+            'Custom surveillance layouts with flexible camera arrangements',
+            'Optimized 2x2 and 3x3 grid views for enhanced visibility',
+            'Live RTSP streaming with AI-processed video feeds',
+            'Immersive fullscreen monitoring experience',
+            'Zone-based camera organization for streamlined operations'
           ]
         }
       },
@@ -38,15 +38,15 @@ export function FeaturesShowcase() {
         title: 'Sites',
         icon: MapPin,
         image: '/sites.png',
-        description: 'Hierarchical site management and organization',
+        description: 'Smart site organization with security hierarchy',
         details: {
-          overview: 'A hierarchical site management system that organizes security infrastructure into a structured hierarchy: Organization → Sites → Subprojects → Zones → Cameras.',
+          overview: 'Structured site management system organizing security infrastructure: Organization → Sites → Zones → Cameras.',
           keyFeatures: [
-            'Site Creation & Management: Complete CRUD operations for security sites',
-            'Site Types: Manufacturing, Office, Retail, Warehouse, and more',
-            'Security Levels: Configurable levels (Low, Medium, High, Critical)',
-            'Project Management: Integrated project manager assignment and budget tracking',
-            'Location Management: Geographic location tracking and organization',
+            'Complete site lifecycle management with CRUD operations',
+            'Multi-industry support: Manufacturing, Office, Retail, Warehouse',
+            'Configurable security levels from Low to Critical',
+            'Integrated project management with budget tracking',
+            'Geographic location mapping and organization tools'
           ]
         }
       },
@@ -55,15 +55,15 @@ export function FeaturesShowcase() {
         title: 'AI Monitoring',
         icon: ScanEye,
         image: '/ai_monitoring.png',
-        description: 'AI-powered monitoring and alerts',
+        description: 'Intelligent threat detection with real-time alerts',
         details: {
-          overview: 'Advanced AI-powered monitoring system that analyzes camera feeds in real-time to identify potential security incidents and suspicious behavior.',
+          overview: 'AI-powered monitoring system analyzing camera feeds in real-time to identify security incidents and suspicious behavior.',
           keyFeatures: [
-            'AI-Powered Analytics: Intelligent threat detection using computer vision',
-            'Real-time Alerts: Instant notifications for security incidents',
-            'Integration with Live Surveillance: Seamless connection with camera feeds',
-            'Security Analytics Dashboard: Comprehensive threat analysis and reporting',
-            'Customizable Alert Rules: Configure detection sensitivity and alert criteria'
+            'Computer vision-based intelligent threat detection',
+            'Instant security incident notifications and alerts',
+            'Seamless integration with live surveillance feeds',
+            'Comprehensive threat analysis and reporting dashboard',
+            'Customizable detection sensitivity and alert criteria'
           ]
         }
       },
@@ -71,28 +71,28 @@ export function FeaturesShowcase() {
         id: 'ai-agents',
         title: 'AI Agents',
         icon: Bot,
-        image: '/ai_agents.png',
-        description: 'Complete AI agents management',
+        image: '/camera_network.png',
+        description: 'End-to-end AI agent deployment and management',
         details: {
-          overview: 'Comprehensive AI agents management system that handles all aspects of AI agents deployment, monitoring, and maintenance across your entire network.',
+          overview: 'Comprehensive AI agent management system handling deployment, monitoring, and maintenance across your entire network.',
           keyFeatures: [
-            'Complete AI Agents Lifecycle: Add, edit, delete, and monitor AI agents',
-            'Network Configuration: AI agents URL setup with authentication support',
-            'AI Agents Types: Fixed, PTZ, Dome, Bullet, and specialized AI agents',
-            'Hardware Tracking: Manufacturer, model, serial numbers, and MAC addresses',
-            'Status Monitoring: Real-time online/offline AI agents monitoring status tracking',
-            'Advanced Search: Filter by name, model, location, IP address, and status'
+            'Full AI agent lifecycle management and monitoring',
+            'Network configuration with secure authentication support',
+            'Support for Fixed, PTZ, Dome, Bullet, and specialized agents',
+            'Complete hardware tracking with manufacturer details',
+            'Real-time online/offline status monitoring and alerts',
+            'Advanced filtering by name, model, location, and status'
           ]
         }
       }
     ]
   
     return (
-      <div className="w-full px-6 lg:px-12 xl:px-20">
+      <div className="mx-auto max-w-6xl px-6">
         {/* Feature Tabs - Schematic Style */}
         <div className="relative mb-12">
           {/* Tab Navigation */}
-          <div className="flex flex-wrap justify-center gap-2 p-2 bg-muted/30 rounded-2xl border border-border/40 backdrop-blur-sm max-w-4xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-2 p-2 bg-muted/30 rounded-2xl border border-border/40 backdrop-blur-sm max-w-8xl mx-auto">
             {features.map((feature, index) => (
               <button
                 key={feature.id}
@@ -117,8 +117,8 @@ export function FeaturesShowcase() {
   
         {/* Feature Content - Enhanced Layout */}
         <AnimatedSection variant="fadeInUp" delay={300} className="relative">
-          <AnimatedCard className="p-6 md:p-8 lg:p-12 bg-gradient-to-br rounded-xl from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-0 ring-1 ring-border/50 shadow-xl" hoverScale={1.01}>
-            <div className="grid gap-8 lg:gap-16 xl:gap-20 lg:grid-cols-[1fr_1.5fr] items-start">
+          <AnimatedCard className="p-4 md:p-6 lg:p-8 bg-gradient-to-br rounded-xl from-background/70 to-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-0 ring-1 ring-border/50" hoverScale={1}>
+            <div className="grid gap-8 lg:gap-16 xl:gap-10 lg:grid-cols-[1fr_1.5fr] items-start">
               {/* Left: Content */}
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
