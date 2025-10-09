@@ -6,6 +6,7 @@ import { Card } from '@/components/ui/card'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { Check, ChevronDown, ChevronUp } from 'lucide-react'
+import { FAQSection } from '@/components/FAQSection'
 
 export default function PricingPage() {
   const [openFaq, setOpenFaq] = useState(null)
@@ -67,7 +68,7 @@ export default function PricingPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section  className="px-6 py-32 md:py-10">
+      <section  className="px-6 py-32 md:py-16">
         <div className="mx-auto max-w-4xl text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
               Start using 
@@ -653,35 +654,7 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="px-6 py-20">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <Card key={index} className="overflow-hidden">
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="w-full p-6 text-left flex justify-between items-center hover:bg-muted/30 transition-colors"
-                >
-                  <h3 className="font-semibold text-lg pr-4">{faq.question}</h3>
-                  {openFaq === index ? (
-                    <ChevronUp className="w-5 h-5 flex-shrink-0" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 flex-shrink-0" />
-                  )}
-                </button>
-                {openFaq === index && (
-                  <div className="px-6 pb-6">
-                    <div className="text-muted-foreground whitespace-pre-line">
-                      {faq.answer}
-                    </div>
-                  </div>
-                )}
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection />
 
       <Footer />
     </main>
