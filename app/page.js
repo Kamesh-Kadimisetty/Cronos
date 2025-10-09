@@ -23,7 +23,7 @@ export default function LandingPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative isolate px-6 py-32 md:py-40 lg:py-38">
+      <section className="relative isolate px-6 py-32 md:py-40 lg:py-40">
         {/* Animated background blobs */}
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute -top-24 -left-16 size-[28rem] rounded-full bg-primary/15 blur-3xl animate-blob" />
