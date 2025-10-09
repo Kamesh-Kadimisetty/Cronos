@@ -15,6 +15,7 @@ import { FeaturesShowcase } from '@/components/FeatuesShowcase'
 import { Navbar } from '@/components/Navbar'
 import { AnimatedSection, StaggeredContainer, StaggeredItem as AnimatedStaggeredItem, RevealText, AnimatedCard, FloatingElement } from '@/components/ui/scroll-animation'
 import { Footer } from '@/components/Footer'
+import { EnterpriseSecuritySection } from '@/components/EnterpriseSecuritySection'
 
 export default function LandingPage() {
 
@@ -48,7 +49,7 @@ export default function LandingPage() {
               <Button asChild showArrow arrowType="up-right">
                 <Link href="/register">See it in Action</Link>
               </Button>
-              <Button asChild variant="secondary" showArrow arrowType="up-right">
+              <Button asChild variant="outline" showArrow arrowType="up-right">
                 <Link href="#product-intelligence">Book a Demo</Link>
               </Button>
             </TextReveal>
@@ -186,6 +187,9 @@ export default function LandingPage() {
           </AnimatedSection>
         </div>
       </AnimatedSection>
+
+      {/* Enterprise Security Section */}
+      <EnterpriseSecuritySection />
 
       {/* CRONOS in Action */}
       <AnimatedSection variant="fadeInUp" className="px-6 py-32 md:py-40">
