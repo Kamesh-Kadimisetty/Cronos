@@ -29,7 +29,6 @@ export function FeaturesShowcase() {
             'Optimized 2x2 and 3x3 grid views for enhanced visibility',
             'Live RTSP streaming with AI-processed video feeds',
             'Immersive fullscreen monitoring experience',
-            'Zone-based camera organization for streamlined operations'
           ]
         }
       },
@@ -43,7 +42,6 @@ export function FeaturesShowcase() {
           overview: 'Structured site management system organizing security infrastructure: Organization → Sites → Zones → Cameras.',
           keyFeatures: [
             'Complete site lifecycle management with CRUD operations',
-            'Multi-industry support: Manufacturing, Office, Retail, Warehouse',
             'Configurable security levels from Low to Critical',
             'Integrated project management with budget tracking',
             'Geographic location mapping and organization tools'
@@ -78,7 +76,6 @@ export function FeaturesShowcase() {
           keyFeatures: [
             'Full AI agent lifecycle management and monitoring',
             'Network configuration with secure authentication support',
-            'Support for Fixed, PTZ, Dome, Bullet, and specialized agents',
             'Complete hardware tracking with manufacturer details',
             'Real-time online/offline status monitoring and alerts',
             'Advanced filtering by name, model, location, and status'
@@ -90,18 +87,19 @@ export function FeaturesShowcase() {
     return (
       <div className="mx-auto max-w-6xl px-6">
         {/* Feature Tabs - Schematic Style */}
-        <div className="relative mb-12">
+        <div className="relative mb-6">
           {/* Tab Navigation */}
-          <div className="flex flex-wrap justify-center gap-2 p-2 bg-muted/30 rounded-2xl border border-border/40 backdrop-blur-sm max-w-8xl mx-auto">
+          <div className="flex flex-wrap text-center justify-center gap-2 p-2 bg-muted/30 rounded-2xl border border-border/40 backdrop-blur-sm w-full mx-auto">
             {features.map((feature, index) => (
               <button
                 key={feature.id}
                 onClick={() => setActiveFeature(index)}
-                className={`relative flex items-center gap-3 px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 ${
+                className={`relative flex items-center justify-center gap-3 px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 w-full sm:w-auto ${
                   activeFeature === index
                     ? 'bg-emerald-500/10 border-emerald-500/30 shadow-lg scale-105'
-                    : 'bg-card/50 border-border/50 hover:bg-card/80 hover:border-border/80'
+                    : 'bg-card/50 border-border/50 '
                 }`}
+                style={{ flex: '1 1 0%' }}
               >
                 <div className={`w-5 h-5 ${activeFeature === index ? 'text-emerald-600' : 'text-muted-foreground'}`}>
                   {React.createElement(feature.icon)}
@@ -137,14 +135,14 @@ export function FeaturesShowcase() {
                   </div>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-2 mt-2">
                   <h4 className="text-lg font-semibold text-foreground">Overview</h4>
                   <p className="text-muted-foreground leading-relaxed">
                     {features[activeFeature].details.overview}
                   </p>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-2 mt-1">
                   <h4 className="text-lg font-semibold text-foreground">Key Features</h4>
                   <ul className="space-y-3">
                     {features[activeFeature].details.keyFeatures.map((feature, index) => (
@@ -158,7 +156,7 @@ export function FeaturesShowcase() {
                   </ul>
                 </div>
 
-                <div className="flex flex-wrap gap-3 pt-4">
+                <div className="flex flex-wrap gap-3 pt-2">
                   <Button size="sm" className="flex-1 min-w-[120px]" showArrow arrowType="up-right">
                     Learn More
                   </Button>
@@ -181,16 +179,6 @@ export function FeaturesShowcase() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
                   </div>
-                  
-                  {/* Image Overlay */}
-                  {/* <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background/90 to-transparent">
-                    <div className="text-sm font-medium text-foreground">
-                      {features[activeFeature].title} Interface
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      Real-time dashboard preview
-                    </div>
-                  </div> */}
                 </div>
               </div>
             </div>

@@ -188,8 +188,6 @@ export default function LandingPage() {
         </div>
       </AnimatedSection>
 
-      {/* Enterprise Security Section */}
-      <EnterpriseSecuritySection />
 
       {/* CRONOS in Action */}
       <AnimatedSection variant="fadeInUp" className="px-6 py-32 md:py-40">
@@ -215,6 +213,9 @@ export default function LandingPage() {
       </AnimatedSection>
 
       
+      {/* Enterprise Security Section */}
+      <EnterpriseSecuritySection />
+    
       {/* How CRONOS Works */}
       <AnimatedSection variant="fadeInUp" className="px-6 py-32 md:py-40">
         <div className="mx-auto max-w-6xl">
