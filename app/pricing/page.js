@@ -67,12 +67,15 @@ export default function PricingPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section  className="px-6 py-32 md:py-30">
+      <section  className="px-6 py-32 md:py-10">
         <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">
-              Start using CRONOS for free
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
+              Start using 
           </h1>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">
+              Cronos for free
+          </h1>
+          <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
             Or schedule a personalized demo to learn more
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
@@ -91,10 +94,10 @@ export default function PricingPage() {
         <div className="mx-auto max-w-7xl">
           {/* Billing Toggle - Top Right */}
           <div className="flex justify-end mb-8">
-            <div className="flex items-center bg-muted rounded-lg p-1">
+            <div className="flex items-center bg-muted rounded-lg p-1.5">
               <button
                 onClick={() => setBillingPeriod('monthly')}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   billingPeriod === 'monthly'
                     ? 'bg-background text-foreground shadow-sm'
                     : 'text-muted-foreground hover:text-foreground'
@@ -104,7 +107,7 @@ export default function PricingPage() {
               </button>
               <button
                 onClick={() => setBillingPeriod('yearly')}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   billingPeriod === 'yearly'
                     ? 'bg-background text-foreground shadow-sm'
                     : 'text-muted-foreground hover:text-foreground'
