@@ -98,6 +98,8 @@ export function Navbar() {
               alt="Cronos"
               width={28}
               height={28}
+              quality={100}
+              priority
               className="rounded"
             />
             <span className="font-semibold">CRONOS</span>

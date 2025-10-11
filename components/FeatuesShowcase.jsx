@@ -174,8 +174,11 @@ export function FeaturesShowcase() {
                       src={features[activeFeature].image}
                       alt={`${features[activeFeature].title} Dashboard`}
                       fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      quality={100}
+                      priority
+                      className="object-contain transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 50vw"
+                      style={{ objectFit: 'contain' }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
                   </div>

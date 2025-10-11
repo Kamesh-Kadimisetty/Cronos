@@ -16,6 +16,7 @@ export function Footer() {
                   alt="Cronos"
                   width={24}
                   height={24}
+                  quality={100}
                   className="rounded"
                 />
                 <span className="font-semibold">CRONOS</span>

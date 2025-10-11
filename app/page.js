@@ -75,11 +75,12 @@ export default function LandingPage() {
                   <Image
                     src="/command_center.png"
                     alt="CRONOS Command Center - Real-time surveillance intelligence and monitoring overview"
-                    width={800}
-                    height={600}
+                    width={1600}
+                    height={1200}
                     className="w-full h-auto rounded-xl object-cover object-center transition-all duration-500 group-hover:scale-[1.02]"
                     priority
-                    quality={95}
+                    quality={100}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
                   />
                 </div>
 
