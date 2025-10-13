@@ -19,12 +19,13 @@ import { EnterpriseSecuritySection } from '@/components/EnterpriseSecuritySectio
 import { Workflow } from '@/components/Workflow'
 import { HeroSection } from '@/components/HeroSection'
 import { GlobeMontioring } from '@/components/GlobeMontioring'
+import { Flow } from '@/components/Flow'
 export default function LandingPage() {
 
   return (
     <main className="min-h-screen w-full">
       <Navbar />
-
+      {/* <Flow /> */}
       {/* Hero */}
       <HeroSection />
 
@@ -67,7 +68,7 @@ export default function LandingPage() {
         </div>
       </AnimatedSection>
 
-      <Workflow />
+      <Flow />
 
       {/* Enterprise Security Section */}
       <EnterpriseSecuritySection />

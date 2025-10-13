@@ -356,3 +356,38 @@ html {
     scroll-behavior: auto !important;
   }
 }
+
+/* Hide React Flow attribution */
+.react-flow__attribution {
+  display: none !important;
+}
+
+/* Animated flow lines */
+.react-flow__edge-path {
+  animation: flow 2s linear infinite;
+}
+
+@keyframes flow {
+  0% {
+    stroke-dashoffset: 10;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Custom animated line flow */
+@keyframes lineFlow {
+  0% {
+    stroke-dashoffset: 500;
+    stroke-dasharray: 100 500;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 100 500;
+  }
+  100% {
+    stroke-dashoffset: -500;
+    stroke-dasharray: 100 500;
+  }
+}
