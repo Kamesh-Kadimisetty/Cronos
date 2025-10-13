@@ -20,7 +20,7 @@ export function EnterpriseSecuritySection() {
               Enterprise-grade infrastructure you can count on, built for uptime and 
               scale. Get direct, dedicated support from our team whenever you need it.
             </p>
-            
+        
             <div className="flex flex-wrap items-center gap-4">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground" showArrow arrowType="up-right">
                   GET EARLY ACCESS
@@ -77,67 +77,94 @@ export function EnterpriseSecuritySection() {
 
           {/* Right: Security Badges */}
           <section className="relative h-[500px] w-full">
-            <div className="grid grid-cols-2 gap-18 max-w-md mx-auto lg:mx-0">
-              {/* SOC II Type 2 Badge */}
-              <div className="group">
-                <div className="relative p-6 rounded-2xl border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="relative z-10 flex flex-col items-center text-center space-y-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 flex items-center justify-center">
-                      <Shield className="w-6 h-6 text-blue-600" />
+            {/* Grid Pattern Background - Left Side */}
+            <div className="absolute left-0 top-1/8 -translate-y-1/4 w-180 h-160 opacity-20 -z-10">
+              <div className="w-full h-full" style={{
+                backgroundImage: `
+                  linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px)
+                `,
+                backgroundSize: '16px 16px'
+              }} />
+            </div>
+            <div className="flex flex-col gap-6 max-w-xs mx-auto lg:mx-0 lg:ml-auto lg:mr-0">
+              <div className="flex gap-6">
+                {/* SOC II Type 2 Badge */}
+                <div className="group flex-1">
+                  <div className="relative p-6 rounded-2xl border-2 border-border/60 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:border-2 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 ring-1 ring-border/20 hover:ring-primary/30">
+                    {/* Corner Dots */}
+                    <div className="absolute top-2 left-2 w-1 h-1 bg-border rounded-full"></div>
+                    <div className="absolute top-2 right-2 w-1 h-1 bg-border rounded-full"></div>
+                    <div className="absolute bottom-2 left-2 w-1 h-1 bg-border rounded-full"></div>
+                    <div className="absolute bottom-2 right-2 w-1 h-1 bg-border rounded-full"></div>
+                    
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="relative z-10 flex flex-col items-center text-center space-y-3">
+                      <div className="w-16 h-16 flex items-center justify-center p-1">
+                        <img 
+                          src="/soc2.jpeg" 
+                          alt="SOC II Type 2 Certified" 
+                          className="w-full h-full object-contain rounded-lg shadow-md"
+                        />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold tracking-wide">SOC II TYPE 2</div>
+                        <div className="text-xs text-muted-foreground font-medium">CERTIFIED</div>
+                      </div>
                     </div>
-                    <div>
-                      <div className="text-sm font-bold">SOC II TYPE 2</div>
-                      <div className="text-xs text-muted-foreground font-medium">CERTIFIED</div>
+                  </div>
+                </div>
+
+                {/* ISO 27001 Badge */}
+                <div className="group flex-1">
+                  <div className="relative p-6 rounded-2xl border-2 border-border/60 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:border-2 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 ring-1 ring-border/20 hover:ring-primary/30">
+                    {/* Corner Dots */}
+                    <div className="absolute top-2 left-2 w-1 h-1 bg-border rounded-full"></div>
+                    <div className="absolute top-2 right-2 w-1 h-1 bg-border rounded-full"></div>
+                    <div className="absolute bottom-2 left-2 w-1 h-1 bg-border rounded-full"></div>
+                    <div className="absolute bottom-2 right-2 w-1 h-1 bg-border rounded-full"></div>
+                    
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="relative z-10 flex flex-col items-center text-center space-y-3">
+                      <div className="w-16 h-16 flex items-center justify-center p-1">
+                        <img 
+                          src="/iso.png" 
+                          alt="ISO 27001 Certified" 
+                          className="w-full h-full object-contain rounded-lg shadow-md"
+                        />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold tracking-wide">ISO 27001</div>
+                        <div className="text-xs text-muted-foreground font-medium">CERTIFIED</div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* ISO 27001 Badge */}
-              <div className="group">
-                <div className="relative p-6 rounded-2xl border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="relative z-10 flex flex-col items-center text-center space-y-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-green-600/20 flex items-center justify-center">
-                      <div className="w-6 h-6 rounded-full border-2 border-green-600 flex items-center justify-center">
-                        <div className="w-3 h-3 rounded-full bg-green-600" />
+              {/* GDPR Compliant Badge - Below ISO */}
+              <div className="flex justify-end">
+                <div className="group w-1/2">
+                  <div className="relative p-6 rounded-2xl border-2 border-border/60 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:border-2 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 ring-1 ring-border/20 hover:ring-primary/30">
+                    {/* Corner Dots */}
+                    <div className="absolute top-2 left-2 w-1 h-1 bg-border rounded-full"></div>
+                    <div className="absolute top-2 right-2 w-1 h-1 bg-border rounded-full"></div>
+                    <div className="absolute bottom-2 left-2 w-1 h-1 bg-border rounded-full"></div>
+                    <div className="absolute bottom-2 right-2 w-1 h-1 bg-border rounded-full"></div>
+                    
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="relative z-10 flex flex-col items-center text-center space-y-3">
+                      <div className="w-16 h-16 flex items-center justify-center p-1">
+                        <img 
+                          src="/gdpr.png" 
+                          alt="GDPR Compliant" 
+                          className="w-full h-full object-contain rounded-lg shadow-md"
+                        />
                       </div>
-                    </div>
-                    <div>
-                      <div className="text-sm font-bold">ISO 27001</div>
-                      <div className="text-xs text-muted-foreground font-medium">CERTIFIED</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* GDPR Compliant Badge */}
-              <div className="group col-span-2">
-                <div className="relative p-6 rounded-2xl border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="relative z-10 flex flex-col items-center text-center space-y-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-600/20 flex items-center justify-center">
-                      <div className="flex items-center justify-center">
-                        <div className="w-6 h-6 rounded-full border-2 border-purple-600 flex items-center justify-center relative">
-                          {/* EU Stars */}
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            {[...Array(12)].map((_, i) => (
-                              <div
-                                key={i}
-                                className="absolute w-0.5 h-0.5 bg-purple-600 rounded-full"
-                                style={{
-                                  transform: `rotate(${i * 30}deg) translateY(-8px)`,
-                                }}
-                              />
-                            ))}
-                          </div>
-                        </div>
+                      <div>
+                        <div className="text-xs font-bold tracking-wide">GDPR</div>
+                        <div className="text-xs text-muted-foreground font-medium">COMPLIANT</div>
                       </div>
-                    </div>
-                    <div>
-                      <div className="text-sm font-bold">GDPR</div>
-                      <div className="text-xs text-muted-foreground font-medium">COMPLIANT</div>
                     </div>
                   </div>
                 </div>
