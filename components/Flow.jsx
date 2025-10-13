@@ -1,5 +1,5 @@
 'use client';
-
+import AnimatedEdge from './AnimatedEdge';
 import React from 'react';
 import ReactFlow, {
   Handle,
@@ -7,6 +7,12 @@ import ReactFlow, {
 } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { Binoculars, ScanEye, MapPin, Bot } from 'lucide-react';
+// Option 2: For React animations
+import { motion } from 'framer-motion';
+
+const edgeTypes = {
+  animated: AnimatedEdge,
+};
 
 // Custom node component with no visible handles
 const CustomNode = ({ data }) => {
@@ -19,6 +25,26 @@ const CustomNode = ({ data }) => {
         style={{
           opacity: 0,
           pointerEvents: 'none',
+        }}
+      />
+      <Handle
+        type="source"
+        position={Position.Right}
+        id="right-top"
+        style={{
+          opacity: 0,
+          pointerEvents: 'none',
+          top: '30%',
+        }}
+      />
+      <Handle
+        type="source"
+        position={Position.Right}
+        id="right-bottom"
+        style={{
+          opacity: 0,
+          pointerEvents: 'none',
+          top: '70%',
         }}
       />
       <Handle
@@ -107,7 +133,7 @@ const initialNodes = [
         <div className="flex items-center gap-2 text-gray-400 text-sm">
           <Binoculars className="w-4 h-4" />
           <span>Live Surveillance</span>
-          <span className="w-2 h-2 rounded-full bg-primary"></span>
+          <span className="w-2 h-2 rounded-full bg-green-500 blink-dot"></span>
         </div>
       ),
       nodeStyle: {
@@ -128,7 +154,7 @@ const initialNodes = [
         <div className="flex items-center gap-2 text-gray-400 text-sm">
           <ScanEye className="w-4 h-4" />
           <span>AI Monitoring</span>
-          <span className="w-2 h-2 rounded-full bg-primary"></span>
+          <span className="w-2 h-2 rounded-full bg-blue-500 blink-dot"></span>
         </div>
       ),
       nodeStyle: {
@@ -149,7 +175,7 @@ const initialNodes = [
         <div className="flex items-center gap-2 text-gray-400 text-sm">
           <MapPin className="w-4 h-4" />
           <span>Site Management</span>
-          <span className="w-2 h-2 rounded-full bg-primary"></span>
+          <span className="w-2 h-2 rounded-full bg-yellow-500 blink-dot"></span>
         </div>
       ),
       nodeStyle: {
@@ -170,7 +196,7 @@ const initialNodes = [
         <div className="flex items-center gap-2 text-gray-400 text-sm">
           <Bot className="w-4 h-4" />
           <span>AI Agents</span>
-          <span className="w-2 h-2 rounded-full bg-primary"></span>
+          <span className="w-2 h-2 rounded-full bg-purple-500 blink-dot"></span>
         </div>
       ),
       nodeStyle: {
@@ -215,53 +241,57 @@ const initialEdges = [
     id: 'e1-2',
     source: 'Cameras & Sensors',
     target: 'CRONOS',
-    type: 'straight',
-    animated: true,
+    type: 'animated',
     style: { stroke: '#666', strokeWidth: 2 },
+    data: { delay: 0, duration: 1, repeatDelay: 1.3 }, // Total cycle: 2.4s
   },
   {
     id: 'e2-3',
     source: 'CRONOS',
     target: 'live-surveillance',
-    type: 'straight',
+    type: 'animated',
     sourceHandle: 'top',
     targetHandle: 'left',
-    animated: true,
     style: { stroke: '#666', strokeWidth: 2 },
+    data: { delay: 1.1, duration: 0.8, repeatDelay: 0.5 }, // Total cycle: 2.4s
   },
   {
     id: 'e2-4',
     source: 'CRONOS',
     target: 'ai-monitoring',
-    type: 'straight',
-    animated: true,
+    type: 'animated',
+    sourceHandle: 'right-top',
+    targetHandle: 'left',
     style: { stroke: '#666', strokeWidth: 2 },
+    data: { delay: 1.1, duration: 0.8, repeatDelay: 0.5 }, // Total cycle: 2.4s
   },
   {
     id: 'e2-5',
     source: 'CRONOS',
     target: 'site-management',
-    type: 'straight',
-    animated: true,
+    type: 'animated',
+    sourceHandle: 'right-bottom',
+    targetHandle: 'left',
     style: { stroke: '#666', strokeWidth: 2 },
+    data: { delay: 1.1, duration: 0.8, repeatDelay: 0.5 }, // Total cycle: 2.4s
   },
   {
     id: 'e2-6',
     source: 'CRONOS',
     target: 'ai-agents',
-    type: 'straight',
+    type: 'animated',
     sourceHandle: 'bottom',
     targetHandle: 'left',
-    animated: true,
     style: { stroke: '#666', strokeWidth: 2 },
+    data: { delay: 1.1, duration: 0.8, repeatDelay: 0.5 }, // Total cycle: 2.4s
   },
   {
     id: 'e2-7',
     source: 'CRONOS',
     target: 'application',
-    type: 'straight',
-    animated: true,
+    type: 'animated',
     style: { stroke: '#666', strokeWidth: 2 },
+    data: { delay: 1.1, duration: 0.8, repeatDelay: 0.5 }, // Total cycle: 2.4s
   },
 ];
 
@@ -282,6 +312,7 @@ export function Flow() {
             nodes={initialNodes}
             edges={initialEdges}
             nodeTypes={nodeTypes}
+            edgeTypes={edgeTypes}
             nodesDraggable={false}
             nodesConnectable={false}
             nodesFocusable={false}
