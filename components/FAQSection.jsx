@@ -39,7 +39,7 @@ export function FAQSection() {
         {/* Centered FAQ Title */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-            <span className="text-lg font-medium text-primary">FAQ</span>
+            <span className="text-lg font-medium text-primary">FAQ's</span>
           </div>
         </div>
 
@@ -50,10 +50,12 @@ export function FAQSection() {
               <div className="text-center lg:text-left">
                 <RevealText>
                   <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">
-                    We simulated what questions you need answering
+                    {/* We simulated what questions you need answering */}
+                    Frequently Asked <br /> Questions
                   </h2>
                 </RevealText>
                 <p className="text-lg text-muted-foreground mb-2">
+                  {/* Explore quick solutions to common questions. */}
                   Explore quick solutions to common questions.
                 </p>
                 <p className="text-muted-foreground">
