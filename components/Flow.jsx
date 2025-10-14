@@ -251,7 +251,7 @@ const initialEdges = [
     sourceHandle: 'top',
     targetHandle: 'left',
     style: { stroke: '#666', strokeWidth: 2 },
-    data: { delay: 1.0, duration: 0.8, repeatDelay: 2.7 }, // Phase 2: Start when first spark reaches CRONOS, Total cycle = 3.5s
+    data: { delay: 1.0, duration: 1.0, repeatDelay: 2.5 }, // Phase 2: Start when first spark reaches CRONOS, Total cycle = 3.5s
   },
   {
     id: 'e2-4',
@@ -261,7 +261,7 @@ const initialEdges = [
     sourceHandle: 'right-top',
     targetHandle: 'left',
     style: { stroke: '#666', strokeWidth: 2 },
-    data: { delay: 1.0, duration: 0.8, repeatDelay: 2.7 }, // Phase 2: Simultaneous with other 4 sparks, Total cycle = 3.5s
+    data: { delay: 1.0, duration: 1.0, repeatDelay: 2.5 }, // Phase 2: Simultaneous with other 4 sparks, Total cycle = 3.5s
   },
   {
     id: 'e2-5',
@@ -271,7 +271,7 @@ const initialEdges = [
     sourceHandle: 'right-bottom',
     targetHandle: 'left',
     style: { stroke: '#666', strokeWidth: 2 },
-    data: { delay: 1.0, duration: 0.8, repeatDelay: 2.7 }, // Phase 2: Simultaneous with other 4 sparks, Total cycle = 3.5s
+    data: { delay: 1.0, duration: 1.0, repeatDelay: 2.5 }, // Phase 2: Simultaneous with other 4 sparks, Total cycle = 3.5s
   },
   {
     id: 'e2-6',
@@ -281,15 +281,15 @@ const initialEdges = [
     sourceHandle: 'bottom',
     targetHandle: 'left',
     style: { stroke: '#666', strokeWidth: 2 },
-    data: { delay: 1.0, duration: 0.8, repeatDelay: 2.7 }, // Phase 2: Simultaneous with other 4 sparks, Total cycle = 3.5s
+    data: { delay: 1.0, duration: 1.0, repeatDelay: 2.5 }, // Phase 2: Simultaneous with other 4 sparks, Total cycle = 3.5s
   },
   {
-    id: 'e2-7',
+    id: 'e2-7', 
     source: 'CRONOS',
     target: 'application',
     type: 'animated',
     style: { stroke: '#666', strokeWidth: 2 },
-    data: { delay: 1.0, duration: 0.8, repeatDelay: 2.7 }, // Phase 2: Simultaneous with other 4 sparks, Total cycle = 3.5s
+    data: { delay: 1.0, duration: 1.0, repeatDelay: 2.5 }, // Phase 2: Simultaneous with other 4 sparks, Total cycle = 3.5s
   },
 ];
 
