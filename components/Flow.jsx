@@ -7,8 +7,6 @@ import ReactFlow, {
 } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { Binoculars, ScanEye, MapPin, Bot } from 'lucide-react';
-// Option 2: For React animations
-import { motion } from 'framer-motion';
 
 const edgeTypes = {
   animated: AnimatedEdge,
@@ -243,7 +241,7 @@ const initialEdges = [
     target: 'CRONOS',
     type: 'animated',
     style: { stroke: '#666', strokeWidth: 2 },
-    data: { delay: 0, duration: 1, repeatDelay: 1.3 }, // Total cycle: 2.4s
+    data: { delay: 0, duration: 1.0, repeatDelay: 2.5 }, // Phase 1: Total cycle = 3.5s
   },
   {
     id: 'e2-3',
@@ -253,7 +251,7 @@ const initialEdges = [
     sourceHandle: 'top',
     targetHandle: 'left',
     style: { stroke: '#666', strokeWidth: 2 },
-    data: { delay: 1.1, duration: 0.8, repeatDelay: 0.5 }, // Total cycle: 2.4s
+    data: { delay: 1.0, duration: 0.8, repeatDelay: 2.7 }, // Phase 2: Start when first spark reaches CRONOS, Total cycle = 3.5s
   },
   {
     id: 'e2-4',
@@ -263,7 +261,7 @@ const initialEdges = [
     sourceHandle: 'right-top',
     targetHandle: 'left',
     style: { stroke: '#666', strokeWidth: 2 },
-    data: { delay: 1.1, duration: 0.8, repeatDelay: 0.5 }, // Total cycle: 2.4s
+    data: { delay: 1.0, duration: 0.8, repeatDelay: 2.7 }, // Phase 2: Simultaneous with other 4 sparks, Total cycle = 3.5s
   },
   {
     id: 'e2-5',
@@ -273,7 +271,7 @@ const initialEdges = [
     sourceHandle: 'right-bottom',
     targetHandle: 'left',
     style: { stroke: '#666', strokeWidth: 2 },
-    data: { delay: 1.1, duration: 0.8, repeatDelay: 0.5 }, // Total cycle: 2.4s
+    data: { delay: 1.0, duration: 0.8, repeatDelay: 2.7 }, // Phase 2: Simultaneous with other 4 sparks, Total cycle = 3.5s
   },
   {
     id: 'e2-6',
@@ -283,7 +281,7 @@ const initialEdges = [
     sourceHandle: 'bottom',
     targetHandle: 'left',
     style: { stroke: '#666', strokeWidth: 2 },
-    data: { delay: 1.1, duration: 0.8, repeatDelay: 0.5 }, // Total cycle: 2.4s
+    data: { delay: 1.0, duration: 0.8, repeatDelay: 2.7 }, // Phase 2: Simultaneous with other 4 sparks, Total cycle = 3.5s
   },
   {
     id: 'e2-7',
@@ -291,7 +289,7 @@ const initialEdges = [
     target: 'application',
     type: 'animated',
     style: { stroke: '#666', strokeWidth: 2 },
-    data: { delay: 1.1, duration: 0.8, repeatDelay: 0.5 }, // Total cycle: 2.4s
+    data: { delay: 1.0, duration: 0.8, repeatDelay: 2.7 }, // Phase 2: Simultaneous with other 4 sparks, Total cycle = 3.5s
   },
 ];
 
